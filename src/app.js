@@ -26,4 +26,11 @@ app.get('', (req, res) => {
    });
 });
 
+app.get('/about',(req,res) => {
+    res.render('about',{
+        title : 'Being Care Foundation | About',
+        name : 'being-care-foundation'
+    });
+});
+
 module.exports = app;
