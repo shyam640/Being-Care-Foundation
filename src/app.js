@@ -40,4 +40,11 @@ app.get('/blog',(req,res) => {
     });
 });
 
+app.get('/contact',(req,res) => {
+    res.render('contact',{
+        title : 'Being Care Foundation | Contact',
+        name : 'being-care-foundation'
+    });
+});
+
 module.exports = app;
