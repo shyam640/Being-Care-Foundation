@@ -24,7 +24,7 @@ app.get('', (req, res) => {
        title: 'Being Care Foundation | Home',
        name: 'being-care-foundation',
        message1: 'Donate for the One ',
-       message2: `You'll get thousand`
+       message2: `You'll get thousand`,
    });
 });
 
@@ -33,7 +33,7 @@ app.get('/about',(req,res) => {
         title : 'Being Care Foundation | About',
         name : 'being-care-foundation',
         message1: 'About ',
-       message2: `Us`
+        message2: `Us`,
     });
 });
 
@@ -42,7 +42,8 @@ app.get('/blog',(req,res) => {
         title : 'Being Care Foundation | Blog',
         name : 'being-care-foundation',
         message1: 'Blogs & ',
-       message2: `Latest Updates!`
+        message2: `Latest Updates!`,
+        
     });
 });
 
@@ -51,7 +52,16 @@ app.get('/contact',(req,res) => {
         title : 'Being Care Foundation | Contact',
         name : 'being-care-foundation',
         message1: 'Contact ',
-       message2: `Us`
+        message2: `Us`,
+    });
+});
+
+app.get('/faq',(req,res) => {
+    res.render('faq',{
+        title : 'Being Care Foundation | FAQs',
+        name : 'being-care-foundation',
+        message1: 'Frequently ',
+        message2: `Asked Questions`,
     });
 });
 
