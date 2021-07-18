@@ -1,0 +1,76 @@
+{{!-- top small header --}}
+        <div class="header-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 text-left shy640-link">
+                <a href="#">FAQ</a>
+                <a href="#" onclick="commonMessage()">Forum</a>
+                <a href="#">Contact</a>
+              </div>
+              <div class="col-md-6 col-sm-6 text-right shy640-social">
+                <a href="#" class="grow"><i class="icon-facebook2"></i></a>
+                <a href="#" class="grow"><i class="icon-twitter2"></i></a>
+                <a href="#" class="grow"><i class="icon-instagram2"></i></a>
+                <a href="#" class="grow"><i class="icon-linkedin2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- start:header --}}
+        <header id="shy640-header-section" class="sticky-banner">
+          <div class="container">
+            <div class="nav-header">
+              <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"
+                ><i></i
+              ></a>
+              <a href="/"
+                ><img
+                  src="./images/logo.jpg"
+                  alt="Being Care Foundation Logo!"
+                  style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))"
+              /></a>
+              <nav id="shy640-menu-wrap" role="navigation">
+                <ul class="sf-menu" id="shy640-primary-menu">
+                  <li>
+                    <a href="/">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="shy640-sub-ddown">Projects</a>
+                    <ul class="shy640-sub-menu">
+                      <li><a href="#">Animal Care</a></li>
+                      <li><a href="#">Free FirstAid Program</a></li>
+                      <li><a href="#">Water Care</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        {{!-- end:header --}}
+
+		  {{!-- Big image section --}}
+        <div class="shy640-hero">
+          <div class="shy640-overlay"></div>
+          <div
+            class="shy640-cover text-center"
+            data-stellar-background-ratio="0.5"
+            style="background-image: url(./images/cover_bg_1.jpg)"
+          >
+            <div class="desc animate-box">
+              {{!-- <h2>
+                <strong style="color: rgb(255, 94, 0)">Donate</strong> for the
+                <strong style="color: rgb(255, 94, 0)">One</strong> You'll get
+                <strong style="color: rgb(255, 94, 0)">thousand</strong>
+              </h2> --}}
+              {{message}}
+              <span>We Care and make Aware</span>
+              <span
+                ><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span
+              >
+            </div>
+          </div>
+        </div>

@@ -1,462 +1,297 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{title}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities."
-    />
-    <meta
-      name="keywords"
-      content="ngogwalior,NGO Gwalior,NGO,Gwalior,ngo gwalior,being care foundation,care foundation"
-    />
-    <meta name="author" content="@its_shyam640" />
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <title>{{title}}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description"
+      content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
+   <meta name="keywords"
+      content="ngogwalior,NGO Gwalior,NGO,Gwalior,ngo gwalior,being care foundation,care foundation" />
+   <meta name="author" content="@its_shyam640" />
 
    {{!-- Adding meta tags for content fetching from url --}}
-    <meta property="og:title" content="Being Care Foundation" />
-    <meta property="og:image" content="../../public/images/logo.jpg" />
-    <meta property="og:url" content="https://beingcarefoundation.org" />
-    <meta property="og:site_name" content="Being Care Foundation" />
-    <meta property="og:description" content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
+   <meta property="og:title" content="Being Care Foundation" />
+   <meta property="og:image" content="../../public/images/logo.jpg" />
+   <meta property="og:url" content="https://beingcarefoundation.org" />
+   <meta property="og:site_name" content="Being Care Foundation" />
+   <meta property="og:description"
+      content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
 
-      {{!-- Adding small icon to the tab --}}
-    <link rel="shortcut icon" href="./images/logo.jpg" />
-	 {{!-- animation css  --}}
-    <link rel="stylesheet" href="./libs/extra_libs/css/animate.css" />
-     {{!-- Icomoon Icon Fonts --}}
-    <link rel="stylesheet" href="./libs/extra_libs/css/icomoon.css" />
-    {{!-- Bootstrap --}}
-    <link rel="stylesheet" href="./libs/extra_libs/css/bootstrap.css" />
-    {{!--  Superfish  --}}
-    <link rel="stylesheet" href="./libs/extra_libs/css/superfish.css" />
-    {{!-- Main css --}}
-    <link rel="stylesheet" href="./css/style.css" />
+   {{!-- Adding small icon to the tab --}}
+   <link rel="shortcut icon" href="./images/logo.jpg" />
+   {{!-- animation css --}}
+   <link rel="stylesheet" href="./libs/extra_libs/css/animate.css" />
+   {{!-- Icomoon Icon Fonts --}}
+   <link rel="stylesheet" href="./libs/extra_libs/css/icomoon.css" />
+   {{!-- Bootstrap --}}
+   <link rel="stylesheet" href="./libs/extra_libs/css/bootstrap.css" />
+   {{!-- Superfish --}}
+   <link rel="stylesheet" href="./libs/extra_libs/css/superfish.css" />
+   {{!-- Main css --}}
+   <link rel="stylesheet" href="./css/style.css" />
 
-    {{!-- Adding link to bootstrap --}}
-    {{!-- <link rel="stylesheet" href="./libs/bootstrap/css/"/>
-    <script src="./libs/bootstrap/js/"></script>
-    <link rel="stylesheet" href="./libs/bootstrap/scss/"/> --}}
+   {{!-- Adding link to bootstrap --}}
+   {{!--
+   <link rel="stylesheet" href="./libs/bootstrap/css/" />
+   <script src="./libs/bootstrap/js/"></script>
+   <link rel="stylesheet" href="./libs/bootstrap/scss/" /> --}}
 
    {{!-- Modernizr Library --}}
-    <script src="./libs/extra_libs/js/modernizr-2.6.2.min.js"></script>
-  </head>
-  <body>
-    {{!-- top small header --}}
-    <div id="shy640-wrapper">
+   <script src="./libs/extra_libs/js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+   <div id="shy640-wrapper">
       <div id="shy640-page">
-        <div class="header-top">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 text-left shy640-link">
-                <a href="#">FAQ</a>
-                <a href="#" onclick="commonMessage()">Forum</a>
-                <a href="#">Contact</a>
-              </div>
-              <div class="col-md-6 col-sm-6 text-right shy640-social">
-                <a href="#" class="grow"><i class="icon-facebook2"></i></a>
-                <a href="#" class="grow"><i class="icon-twitter2"></i></a>
-                <a href="#" class="grow"><i class="icon-instagram2"></i></a>
-                <a href="#" class="grow"><i class="icon-linkedin2"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {{!-- start:header --}}
-        <header id="shy640-header-section" class="sticky-banner">
-          <div class="container">
-            <div class="nav-header">
-              <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"
-                ><i></i
-              ></a>
-              <a href="/"
-                ><img
-                  src="./images/logo.jpg"
-                  alt="Being Care Foundation Logo!"
-                  style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))"
-              /></a>
-              <nav id="shy640-menu-wrap" role="navigation">
-                <ul class="sf-menu" id="shy640-primary-menu">
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="#" class="shy640-sub-ddown">Projects</a>
-                    <ul class="shy640-sub-menu">
-                      <li><a href="#">Animal Care</a></li>
-                      <li><a href="#">Free FirstAid Program</a></li>
-                      <li><a href="#">Water Care</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/about">About</a></li>
-                  <li class="active"><a href="/blog">Blog</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
-        {{!-- end:header --}}
+         {{>header}}
 
-		  {{!-- start of what we do section --}}
-        <div class="shy640-hero">
-          <div class="shy640-overlay"></div>
-          <div
-            class="shy640-cover text-center"
-            data-stellar-background-ratio="0.5"
-            style="background-image: url(./images/cover_bg_1.jpg)"
-          >
-            <div class="desc animate-box">
-              <h2>
-                <strong style="color: rgb(255, 94, 0)">Blogs &amp; </strong>Latest News!
-              </h2>
-              <span>We Care and make Aware</span>
-              <span
-                ><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span
-              >
-            </div>
-          </div>
-        </div>
-
-
-        <div id="shy640-blog-section" class="shy640-section-gray">
-          <div class="container">
-            <div class="row">
-              <div
-                class="
+         <div id="shy640-blog-section" class="shy640-section-gray">
+            <div class="container">
+               <div class="row">
+                  <div class="
                   col-md-8 col-md-offset-2
                   text-center
                   heading-section
                   animate-box
-                "
-              >
-                <h3>Read. Learn. Share</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Velit est facilis maiores, perspiciatis accusamus asperiores
-                  sint consequuntur debitis.
-                </p>
-              </div>
+                ">
+                     <h3>Read. Learn. Share</h3>
+                     <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Velit est facilis maiores, perspiciatis accusamus asperiores
+                        sint consequuntur debitis.
+                     </p>
+                  </div>
+               </div>
             </div>
-          </div>
-          <div class="container">
-            <div class="row row-bottom-padded-md">
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_1.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 1</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_2.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 2</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-sm-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_3.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 3</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-md-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_1.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 4</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-sm-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_2.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 5</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_3.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 6</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-sm-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_1.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 7</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-md-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_2.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 8</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix visible-sm-block"></div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shy640-blog animate-box">
-                  <a href="#"
-                    ><img
-                      class="img-responsive"
-                      src="./images/cover_bg_3.jpg"
-                      alt=""
-                  /></a>
-                  <div class="blog-text">
-                    <div class="prod-title">
-                      <h3><a href="#">Project 9</a></h3>
-                      <span class="posted_by">Sep. 15th</span>
-                      <span class="comment"
-                        ><a href="">21<i class="icon-bubble2"></i></a
-                      ></span>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dignissimos, vitae dicta excepturi ipsam quasi
-                        reiciendis tenetur beatae quos, sequi non nisi adipisci
-                        molestiae sunt? Recusandae, praesentium officiis!
-                        Quidem, veritatis corrupti?
-                      </p>
-                      <p><a href="#">Read More...</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4 col-md-offset-4 text-center animate-box">
-                <a href="#" class="btn btn-primary btn-lg">More Blogs</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {{!-- end of blog section --}}
-
-         {{!-- start of footer --}}
-        <footer>
-          <div id="footer">
             <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                  <p class="shy640-social-icons">
-                    <a href="#"><i class="icon-twitter2"></i></a>
-                    <a href="#"><i class="icon-facebook2"></i></a>
-                    <a href="#"><i class="icon-instagram"></i></a>
-                    <a href="#"><i class="icon-linkedin2"></i></a>
-                    <a href="#"><i class="icon-youtube"></i></a>
-                  </p>
-                  <p>
-                    Copyright 2021 &copy;
-                    <a href="/">Being Care Foundation</a>. All Rights
-                    Reserved. <br />Made with <i class="icon-heart3"></i> by
-                    <a
-                      href="https://www.google.com/search?q=its_shyam640"
-                      target="_blank"
-                      >@its_shyam640</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-		  {{!-- end of footer --}}
-      </div>
-    </div>
+               <div class="row row-bottom-padded-md">
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_1.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 1</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_2.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 2</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-sm-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_3.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 3</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-md-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_1.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 4</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-sm-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_2.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 5</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_3.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 6</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-sm-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_1.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 7</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-md-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_2.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 8</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clearfix visible-sm-block"></div>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                     <div class="shy640-blog animate-box">
+                        <a href="#"><img class="img-responsive" src="./images/cover_bg_3.jpg" alt="" /></a>
+                        <div class="blog-text">
+                           <div class="prod-title">
+                              <h3><a href="#">Project 9</a></h3>
+                              <span class="posted_by">Sep. 15th</span>
+                              <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
+                              <p>
+                                 Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Dignissimos, vitae dicta excepturi ipsam quasi
+                                 reiciendis tenetur beatae quos, sequi non nisi adipisci
+                                 molestiae sunt? Recusandae, praesentium officiis!
+                                 Quidem, veritatis corrupti?
+                              </p>
+                              <p><a href="#">Read More...</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
 
-    {{!-- jQuery --}}
-    <script src="./libs/extra_libs/js/jquery.min.js"></script>
-    {{!-- jQuery Easing --}}
-    <script src="./libs/extra_libs/js/jquery.easing.1.3.js"></script>
-     {{!-- Bootstrap --}}
-    <script src="./libs/extra_libs/js/bootstrap.min.js"></script>
-    {{!-- Waypoints  --}}
-    <script src="./libs/extra_libs/js/jquery.waypoints.min.js"></script>
-    {{!-- Sticky --}}
-    <script src="./libs/extra_libs/js/sticky.js"></script>
-    {{!-- Stellar --}}
-    <script src="./libs/extra_libs/js/jquery.stellar.min.js"></script>
-    
-    <script src="./libs/extra_libs/js/hoverIntent.js"></script>
-    {{!-- Superfish  --}}
-    <script src="./libs/extra_libs/js/superfish.js"></script>
-    <!-- Main JS -->
-    <script src="./js/main.js"></script>
-  </body>
-  <script>
-    let commonMessage = () => {
+               <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center animate-box">
+                     <a href="#" class="btn btn-primary btn-lg">More Blogs</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {{!-- end of blog section --}}
+
+         {{>footer}}
+      </div>
+   </div>
+
+   {{!-- jQuery --}}
+   <script src="./libs/extra_libs/js/jquery.min.js"></script>
+   {{!-- jQuery Easing --}}
+   <script src="./libs/extra_libs/js/jquery.easing.1.3.js"></script>
+   {{!-- Bootstrap --}}
+   <script src="./libs/extra_libs/js/bootstrap.min.js"></script>
+   {{!-- Waypoints --}}
+   <script src="./libs/extra_libs/js/jquery.waypoints.min.js"></script>
+   {{!-- Sticky --}}
+   <script src="./libs/extra_libs/js/sticky.js"></script>
+   {{!-- Stellar --}}
+   <script src="./libs/extra_libs/js/jquery.stellar.min.js"></script>
+
+   <script src="./libs/extra_libs/js/hoverIntent.js"></script>
+   {{!-- Superfish --}}
+   <script src="./libs/extra_libs/js/superfish.js"></script>
+   <!-- Main JS -->
+   <script src="./js/main.js"></script>
+</body>
+<script>
+   let commonMessage = () => {
       alert("This Page will be available soon...");
-    };
-  </script>
+   };
+</script>
+
 </html>
