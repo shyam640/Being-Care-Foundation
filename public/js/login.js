@@ -18,6 +18,7 @@ $(function() {
          $(".social_login").hide();
          $(".user_register").show();
          $(".header_title").text('Register');
+         $('#basic').flagStrap();
          return false;
    });
 
