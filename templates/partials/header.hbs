@@ -39,7 +39,8 @@
           <li id="about"><a href="/about">About</a></li>
           <li id="blog"><a href="/blog">Blog</a></li>
           <li id="contact"><a href="/contact">Contact</a></li>
-          <li id="join-button"><a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">JOIN</a></li>
+          <li id="join-button"><a href="#modalLRForm" class="btn btn-default btn-rounded my-3"
+              data-toggle="modal">JOIN</a></li>
 
         </ul>
       </nav>
@@ -76,7 +77,7 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
           <li class="nav-item btn-primary" id="login" style="background-color: whitesmoke;">
-            <a class="nav-link" data-toggle="tab" href="#panellogin" role="tab"><i class="icon-user2"></i>
+            <a class="nav-link" data-toggle="tab" data-target="#panellogin" role="tab"><i class="icon-user2"></i>
               Login</a>
           </li>
           <li class="nav-item btn-primary" id="register" style="background-color: whitesmoke;">
@@ -91,29 +92,30 @@
           <div class="tab-pane fade in show" id="panellogin" role="tabpanel">
 
             <!--Body-->
-            <div class="modal-body mb-1">
+            <form action="/login" class="modal-body mb-1">
               <div class="md-form form-sm mb-5">
                 <i class="icon-envelop prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput10">Your Email/Phone</label>
-                <input type="email tel" id="modalLRInput10" class="form-control form-control-sm validate">
+                <input name="email-phone" type="email tel" id="modalLRInput10" class="form-control form-control-sm validate">
               </div>
 
               <div class="md-form form-sm mb-9">
                 <i class="icon-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
-                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <input name="password" type="password" id="modalLRInput11" class="form-control form-control-sm validate">
               </div>
               <div class="text-center mt-4" id="loginButton">
-                <button class="btn btn-primary">Log in <i class="icon-login ml-1"></i></button>
+                <button class="btn btn-primary" type="submit">Log in <i class="icon-login ml-1"></i></button>
               </div>
-            </div>
+            </form>
             <!--Footer-->
             <div class="modal-footer">
               <div class="options text-center text-md-right mt-1">
                 <p>Not a member? <a href="" class="blue-text" id="register">Sign Up</a></p>
                 <p><a href="#" class="blue-text">Forgot Password?</a></p>
               </div>
-              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i class="icon-exit ml-1"></i></button>
+              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
+                  class="icon-exit ml-1"></i></button>
             </div>
 
           </div>
@@ -123,42 +125,43 @@
           <div class="tab-pane fade" id="panelregister" role="tabpanel">
 
             <!--Body-->
-            <div class="modal-body">
+            <form action="/register" class="modal-body">
               <div class="md-form form-sm mb-5">
                 <i class="icon-email prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput12">Your Email</label>
-                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
               </div>
 
               <div class="md-form form-sm mb-5">
                 <i class="icon-phone prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone</label>
-                <input type="tel" id="modalLRInput13" class="form-control form-control-sm validate">
+                <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate">
               </div>
 
               <div class="md-form form-sm mb-5">
                 <i class="icon-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput14">Your Password</label>
-                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <input name="password" type="password" id="modalLRInput13" class="form-control form-control-sm validate">
               </div>
 
               <div class="md-form form-sm mb-4">
                 <i class="icon-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat Password</label>
-                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <input name="repeat-password" type="password" id="modalLRInput14" class="form-control form-control-sm validate">
               </div>
 
               <div class="text-center form-sm mt-2" id="registerButton">
-                <button class="btn btn-primary">Sign up <i class="icon-login ml-1"></i></button>
+                <button class="btn btn-primary" type="submit">Sign up <i class="icon-login ml-1"></i></button>
               </div>
 
-            </div>
+            </form>
             <!--Footer-->
             <div class="modal-footer">
               <div class="options text-right">
                 <p class="pt-1">Already have an account? <a href="" class="blue-text" id="login">Log In</a></p>
               </div>
-              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i class="icon-exit ml-1"></i></button>
+              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
+                  class="icon-exit ml-1"></i></button>
             </div>
           </div>
           <!--/.Panel register-->
@@ -172,7 +175,7 @@
 <!--Modal: Login / Register Form-->
 
 <div class="text-center">
-  
+
 </div>
 
 {{!-- Big image section --}}
@@ -187,6 +190,3 @@
     </div>
   </div>
 </div>
-
-
-
