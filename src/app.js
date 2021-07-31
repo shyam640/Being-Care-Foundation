@@ -2,6 +2,9 @@ const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
 const hbs = require('hbs');
+require('./db/mongoose');
+const userRouter = require('../src/routers/user');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -12,7 +15,11 @@ const partialsPath = path.join(__dirname,'../templates/partials');
 
 // setting up static directory to serve
 app.use(express.static(pathToPublicDir));
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.urlencoded({ 
+    extended: true
+}));
+app.use(userRouter);
 
 // setting up handler bar engine and views location
 app.set('view engine','hbs');

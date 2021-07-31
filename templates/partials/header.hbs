@@ -77,7 +77,7 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
           <li class="nav-item btn-primary" id="login" style="background-color: whitesmoke;">
-            <a class="nav-link" data-toggle="tab" data-target="#panellogin" role="tab"><i class="icon-user2"></i>
+            <a class="nav-link" data-toggle="tab" href="#panellogin" role="tab"><i class="icon-user2"></i>
               Login</a>
           </li>
           <li class="nav-item btn-primary" id="register" style="background-color: whitesmoke;">
@@ -92,21 +92,16 @@
           <div class="tab-pane fade in show" id="panellogin" role="tabpanel">
 
             <!--Body-->
-            <form action="/login" class="modal-body mb-1">
-              <div class="md-form form-sm mb-5">
+            <form action="/users/login" method="POST" class="modal-body mb-1">
                 <i class="icon-envelop prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Email/Phone</label>
-                <input name="email-phone" type="email tel" id="modalLRInput10" class="form-control form-control-sm validate">
-              </div>
+                <label data-error="wrong" data-success="right" for="modalLRInput9">Your Email/Phone</label>
+                <input name="emailphone" type="email tel" id="modalLRInput9" class="form-control form-control-sm validate">
 
-              <div class="md-form form-sm mb-9">
                 <i class="icon-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Password</label>
-                <input name="password" type="password" id="modalLRInput11" class="form-control form-control-sm validate">
-              </div>
-              <div class="text-center mt-4" id="loginButton">
+                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Password</label>
+                <input name="password" type="password" id="modalLRInput10" class="form-control form-control-sm validate">
+                
                 <button class="btn btn-primary" type="submit">Log in <i class="icon-login ml-1"></i></button>
-              </div>
             </form>
             <!--Footer-->
             <div class="modal-footer">
@@ -122,38 +117,31 @@
           <!--/.Panel login-->
 
           <!--Panel register-->
-          <div class="tab-pane fade" id="panelregister" role="tabpanel">
+          <div class="tab-pane fade out" id="panelregister" role="tabpanel">
 
             <!--Body-->
-            <form action="/register" class="modal-body">
-              <div class="md-form form-sm mb-5">
+            <form action="/user/register" method="POST" class="modal-body">
+                <i class="icon-user-tie prefix"></i>
+                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Full Name</label>
+                <input name="name" type="text" id="modalLRInput11" class="form-control form-control-sm validate" required>
+
                 <i class="icon-email prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput12">Your Email</label>
-                <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-              </div>
+                <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate" required>
 
-              <div class="md-form form-sm mb-5">
                 <i class="icon-phone prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone</label>
-                <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate">
-              </div>
+                <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate" required>
 
-              <div class="md-form form-sm mb-5">
                 <i class="icon-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput14">Your Password</label>
-                <input name="password" type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-              </div>
+                <input name="password" type="password" id="modalLRInput14" class="form-control form-control-sm validate" required>
 
-              <div class="md-form form-sm mb-4">
                 <i class="icon-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat Password</label>
-                <input name="repeat-password" type="password" id="modalLRInput14" class="form-control form-control-sm validate">
-              </div>
+                <input name="repeat-password" type="password" id="modalLRInput15" class="form-control form-control-sm validate" required>
 
-              <div class="text-center form-sm mt-2" id="registerButton">
                 <button class="btn btn-primary" type="submit">Sign up <i class="icon-login ml-1"></i></button>
-              </div>
-
             </form>
             <!--Footer-->
             <div class="modal-footer">
