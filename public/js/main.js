@@ -63,6 +63,17 @@
 
 		});
 
+		$('#join-button').on('click', function(){
+
+			if ( $('body').hasClass('shy640-offcanvas') ) {
+				$('body').removeClass('shy640-offcanvas');
+			} else {
+				$('body').addClass('shy640-offcanvas');
+			}
+			
+
+		});
+
 		$('#offcanvas-menu').css('height', $(window).height());
 
 		$(window).resize(function(){
@@ -94,6 +105,8 @@
 	    }
 		});
 	};
+
+	
 
 
 	// Animations
