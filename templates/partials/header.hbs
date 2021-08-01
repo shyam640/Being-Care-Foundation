@@ -93,20 +93,32 @@
 
             <!--Body-->
             <form action="/users/login" method="POST" class="modal-body mb-1">
-                <i class="icon-envelop prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput9">Your Email/Phone</label>
-                <input name="emailphone" type="email tel" id="modalLRInput9" class="form-control form-control-sm validate">
+              <i class="icon-envelop prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput9">Your Email/Phone</label>
+              <input name="emailphone" type="email tel" id="modalLRInput9"
+                class="form-control form-control-sm validate">
 
-                <i class="icon-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Password</label>
-                <input name="password" type="password" id="modalLRInput10" class="form-control form-control-sm validate">
-                
-                <button class="btn btn-primary" type="submit">Log in <i class="icon-login ml-1"></i></button>
+              <i class="icon-lock prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput10">Your Password</label>
+              <input name="password" type="password" id="modalLRInput10" class="form-control form-control-sm validate">
+
+              <button class="btn btn-primary" type="submit">Log in <i class="icon-login ml-1"></i></button>
             </form>
             <!--Footer-->
             <div class="modal-footer">
               <div class="options text-center text-md-right mt-1">
-                <p>Not a member? <a href="" class="blue-text" id="register">Sign Up</a></p>
+                <div style="display: flex;">
+                  <a href="#" class="btn btn-lg btn-block omb_btn-facebook"
+                    style="margin: 20px;background-color:rgb(59, 111, 255); color: rgb(253, 249, 249); ">
+                    <i class="icon-facebook visible-xs"></i>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="btn btn-lg btn-block omb_btn-google"
+                    style="margin: 20px;background-color:rgb(255, 72, 59); color: rgb(253, 249, 249); ">
+                    <i class="icon-google visible-xs"></i>
+                    <span>Google+</span>
+                  </a>
+                </div>
                 <p><a href="#" class="blue-text">Forgot Password?</a></p>
               </div>
               <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
@@ -121,33 +133,45 @@
 
             <!--Body-->
             <form action="/user/register" method="POST" class="modal-body">
-                <i class="icon-user-tie prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput11">Your Full Name</label>
-                <input name="name" type="text" id="modalLRInput11" class="form-control form-control-sm validate" required>
+              <i class="icon-user-tie prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput11">Your Full Name</label>
+              <input name="name" type="text" id="modalLRInput11" class="form-control form-control-sm validate" required>
 
-                <i class="icon-email prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput12">Your Email</label>
-                <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate" required>
+              <i class="icon-email prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput12">Your Email</label>
+              <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate"
+                required>
 
-                <i class="icon-phone prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone</label>
-                <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate" required>
+              <i class="icon-phone prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone</label>
+              <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate" required>
 
-                <i class="icon-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput14">Your Password</label>
-                <input name="password" type="password" id="modalLRInput14" class="form-control form-control-sm validate" required>
+              <i class="icon-lock prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput14">Your Password</label>
+              <input name="password" type="password" id="modalLRInput14" class="form-control form-control-sm validate"
+                required>
 
-                <i class="icon-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat Password</label>
-                <input name="repeat-password" type="password" id="modalLRInput15" class="form-control form-control-sm validate" required>
+              <i class="icon-lock prefix"></i>
+              <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat Password</label>
+              <input name="repeat-password" type="password" id="modalLRInput15"
+                class="form-control form-control-sm validate" required>
 
-                <button class="btn btn-primary" type="submit">Sign up <i class="icon-login ml-1"></i></button>
+              <button class="btn btn-primary" type="submit">Sign up <i class="icon-login ml-1"></i></button>
             </form>
             <!--Footer-->
             <div class="modal-footer">
-              <div class="options text-right">
-                <p class="pt-1">Already have an account? <a href="" class="blue-text" id="login">Log In</a></p>
-              </div>
+              <div style="display: flex;">
+                  <a href="#" class="btn btn-lg btn-block omb_btn-facebook"
+                    style="margin: 20px;background-color:rgb(59, 111, 255); color: rgb(253, 249, 249); ">
+                    <i class="icon-facebook visible-xs"></i>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="btn btn-lg btn-block omb_btn-google"
+                    style="margin: 20px;background-color:rgb(255, 72, 59); color: rgb(253, 249, 249); ">
+                    <i class="icon-google visible-xs"></i>
+                    <span>Google+</span>
+                  </a>
+                </div>
               <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
                   class="icon-exit ml-1"></i></button>
             </div>
