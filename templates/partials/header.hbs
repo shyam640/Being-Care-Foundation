@@ -39,153 +39,19 @@
           <li id="about"><a href="/about">About</a></li>
           <li id="blog"><a href="/blog">Blog</a></li>
           <li id="contact"><a href="/contact">Contact</a></li>
-          <li id="join-button"><a href="#modalLRForm" class="btn btn-default btn-rounded my-3"
-              data-toggle="modal">JOIN</a></li>
-
+          <li id="join-button" class="btn btn-default btn-rounded my-3">
+            <a href="#" class="shy640-sub-ddown">Join</a>
+            <ul class="shy640-sub-menu">
+              <li id="register-button"><a href="/register">Register</a></li>
+              <li id="login-button"><a href="/login">Login</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
-  <script>
-    window.onload = function () {
-      document.getElementById('login').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('panellogin').classList.add('show');
-        document.getElementById('panelregister').classList.remove('show');
-      });
-      document.getElementById('register').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('panellogin').classList.remove('show');
-        document.getElementById('panelregister').classList.remove('show');
-      });
-
-    }
-  </script>
 </header>
 {{!-- end:header --}}
-
-
-<!--Modal: Login / Register Form-->
-<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog cascading-modal" role="document">
-    <!--Content-->
-    <div class="modal-content">
-
-      <!--Modal cascading tabs-->
-      <div class="modal-c-tabs">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
-          <li class="nav-item btn-primary" id="login" style="background-color: whitesmoke;">
-            <a class="nav-link" data-toggle="tab" href="#panellogin" role="tab"><i class="icon-user2"></i>
-              Login</a>
-          </li>
-          <li class="nav-item btn-primary" id="register" style="background-color: whitesmoke;">
-            <a class="nav-link" data-toggle="tab" href="#panelregister" role="tab"><i class="icon-user-plus"></i>
-              Register</a>
-          </li>
-        </ul>
-
-        <!-- Tab panels -->
-        <div class="tab-content">
-          <!--Panel login-->
-          <div class="tab-pane fade in show" id="panellogin" role="tabpanel">
-
-            <!--Body-->
-            <form action="/users/login" method="POST" class="modal-body mb-1">
-              <i class="icon-envelop prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput9">Your Email/Phone</label>
-              <input name="emailphone" type="email tel" id="modalLRInput9"
-                class="form-control form-control-sm validate">
-
-              <i class="icon-lock prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput10">Your Password</label>
-              <input name="password" type="password" id="modalLRInput10" class="form-control form-control-sm validate">
-
-              <button class="btn btn-primary" type="submit">Log in <i class="icon-login ml-1"></i></button>
-            </form>
-            <!--Footer-->
-            <div class="modal-footer">
-              <div class="options text-center text-md-right mt-1">
-                <div style="display: flex;">
-                  <a href="#" class="btn btn-lg btn-block omb_btn-facebook"
-                    style="margin: 20px;background-color:rgb(59, 111, 255); color: rgb(253, 249, 249); ">
-                    <i class="icon-facebook visible-xs"></i>
-                    <span>Facebook</span>
-                  </a>
-                  <a href="#" class="btn btn-lg btn-block omb_btn-google"
-                    style="margin: 20px;background-color:rgb(255, 72, 59); color: rgb(253, 249, 249); ">
-                    <i class="icon-google visible-xs"></i>
-                    <span>Google+</span>
-                  </a>
-                </div>
-                <p><a href="#" class="blue-text">Forgot Password?</a></p>
-              </div>
-              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
-                  class="icon-exit ml-1"></i></button>
-            </div>
-
-          </div>
-          <!--/.Panel login-->
-
-          <!--Panel register-->
-          <div class="tab-pane fade out" id="panelregister" role="tabpanel">
-
-            <!--Body-->
-            <form action="/user/register" method="POST" class="modal-body">
-              <i class="icon-user-tie prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput11">Your Full Name</label>
-              <input name="name" type="text" id="modalLRInput11" class="form-control form-control-sm validate" required>
-
-              <i class="icon-email prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput12">Your Email</label>
-              <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate"
-                required>
-
-              <i class="icon-phone prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput13">Your Phone</label>
-              <input name="phone" type="tel" id="modalLRInput13" class="form-control form-control-sm validate" required>
-
-              <i class="icon-lock prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput14">Your Password</label>
-              <input name="password" type="password" id="modalLRInput14" class="form-control form-control-sm validate"
-                required>
-
-              <i class="icon-lock prefix"></i>
-              <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat Password</label>
-              <input name="repeat-password" type="password" id="modalLRInput15"
-                class="form-control form-control-sm validate" required>
-
-              <button class="btn btn-primary" type="submit">Sign up <i class="icon-login ml-1"></i></button>
-            </form>
-            <!--Footer-->
-            <div class="modal-footer">
-              <div style="display: flex;">
-                  <a href="#" class="btn btn-lg btn-block omb_btn-facebook"
-                    style="margin: 20px;background-color:rgb(59, 111, 255); color: rgb(253, 249, 249); ">
-                    <i class="icon-facebook visible-xs"></i>
-                    <span>Facebook</span>
-                  </a>
-                  <a href="#" class="btn btn-lg btn-block omb_btn-google"
-                    style="margin: 20px;background-color:rgb(255, 72, 59); color: rgb(253, 249, 249); ">
-                    <i class="icon-google visible-xs"></i>
-                    <span>Google+</span>
-                  </a>
-                </div>
-              <button type="button" class="btn btn-outline-primary waves-effect ml-auto" data-dismiss="modal">Close<i
-                  class="icon-exit ml-1"></i></button>
-            </div>
-          </div>
-          <!--/.Panel register-->
-        </div>
-
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!--Modal: Login / Register Form-->
-
 <div class="text-center">
 
 </div>

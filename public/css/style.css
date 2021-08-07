@@ -1447,6 +1447,20 @@
    line-height: 1.8;
  }
 
+ .my-form
+ {
+   height: fit-content;
+     padding-top: 1.5rem;
+     padding-bottom: 1.5rem;
+ }
+ 
+ .my-form .row
+ {
+     margin-left: 0;
+     margin-right: 0;
+ }
+ 
+
  /* OTP form css */
 
  .position-relative{

@@ -4,7 +4,7 @@ const User = require('../models/user');
 const auth = require('../middleware/auth');
 const sharp = require('sharp');
 
-router.post('/user/register',async (req,res) => {
+router.post('/users/register',async (req,res) => {
    console.log(req.body);
    const user = new User(req.body);
    try{

@@ -5,6 +5,9 @@ const hbs = require('hbs');
 require('./db/mongoose');
 const userRouter = require('../src/routers/user');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
 
 const app = express();
 
@@ -15,7 +18,7 @@ const partialsPath = path.join(__dirname,'../templates/partials');
 
 // setting up static directory to serve
 app.use(express.static(pathToPublicDir));
-// app.use(express.json());
+app.use(express.json());
 app.use(bodyParser.urlencoded({ 
     extended: true
 }));
@@ -26,7 +29,21 @@ app.set('view engine','hbs');
 app.set('views',viewsPath);
 hbs.registerPartials(partialsPath);
 
-app.get('', (req, res) => {
+// Express Session Configuration
+app.use(
+    session({
+        secret: process.env.SessionSecret,
+        resave: true,
+        saveUninitialized: true
+    })
+)
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());  // connecting flash for messages
+
+app.get('',(req, res) => {
    res.render('home', {
        title: 'Being Care Foundation | Home',
        name: 'being-care-foundation',
@@ -71,5 +88,31 @@ app.get('/faq',(req,res) => {
         message2: `Asked Questions`,
     });
 });
+
+app.get('/register',(req,res) => {
+    res.render('register',{
+        title : 'Being Care Foundation | Register'
+    });
+});
+
+app.get('/login',(req,res) => {
+    res.render('login',{
+        title : 'Being Care Foundation | Login'
+    });
+});
+
+app.get('/resetPassword',(req,res) => {
+    res.render('forgotpass',{
+        title : 'Being Care Foundation | Reset Password'
+    });
+});
+
+// Global Variables for showing messages
+app.use(function(req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+  });
 
 module.exports = app;

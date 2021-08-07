@@ -10,6 +10,11 @@ const userSchema = new mongoose.Schema(
          required : true,
          trim : true
       },
+      username : {
+         type : String,
+         required : true,
+         trim : true
+      },
       email : {
          type : String,
          unique : true,
@@ -41,6 +46,10 @@ const userSchema = new mongoose.Schema(
             }
          }
       },
+      resetLink: {
+         type: String,
+         default: ''
+       },
       tokens : [{
          token : {
             type : String,
