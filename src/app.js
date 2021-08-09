@@ -29,14 +29,6 @@ app.set('view engine','hbs');
 app.set('views',viewsPath);
 hbs.registerPartials(partialsPath);
 
-// Express Session Configuration
-app.use(
-    session({
-        secret: process.env.SessionSecret,
-        resave: true,
-        saveUninitialized: true
-    })
-)
 
 // Passport middleware
 app.use(passport.initialize());
@@ -107,12 +99,6 @@ app.get('/resetPassword',(req,res) => {
     });
 });
 
-// Global Variables for showing messages
-app.use(function(req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
-  });
+
 
 module.exports = app;
