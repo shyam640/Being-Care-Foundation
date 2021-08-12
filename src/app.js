@@ -150,11 +150,21 @@ app.get('/resetPassword',(req,res) => {
     });
 });
 
-app.get('/dashboard',(req,res) => {
+app.get('/dashboard',async (req,res) => {
     var list = parseCookies(req);
-    if(list.isAuthenticated){
+    const decoded = jwt.verify(list.user_token , process.env.JWT_SECRET_CODE);
+    const user = await User.findOne({ _id : decoded._id , 'tokens.token' : list.user_token});
+    let isAuthenticated = list.isAuthenticated;
+    let username = list.username;
+    if(isAuthenticated){
         res.render('dashboard',{
-            title : 'Being Care Foundation | Dashboard'
+            title : 'Being Care Foundation | Dashboard',
+            isAuthenticated,
+            username,
+            full_name : user.name,
+            email : user.email,
+            phone : user.phone,
+            password : user.password,
         });
     }else{
         res.render('login',{

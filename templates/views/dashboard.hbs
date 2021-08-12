@@ -32,517 +32,219 @@
    <link rel="stylesheet" href="./libs/extra_libs/css/superfish.css" />
    {{!-- Main css --}}
    <link rel="stylesheet" href="./css/style.css" />
-   <link rel="stylesheet" href="./css/tailwind.output.css" />
+   <link rel="stylesheet" href="./css/dashboard.style.css" />
 
    {{!-- Adding link to bootstrap --}}
 
+
    {{!--
-   <link rel="stylesheet" href="./libs/bootstrap/css/" /> --}}
+   <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css" /> --}}
 
    {{!--
    <link rel="stylesheet" href="./libs/bootstrap/scss/" /> --}}
 
    {{!-- Modernizr Library --}}
    <script src="/libs/extra_libs/js/modernizr-2.6.2.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<style>
-   .upper-icons {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: right !important;
-      align-items: right !important;
-   }
-</style>
-
 <body>
-   <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
-      <!-- Desktop sidebar -->
-      <aside class="
-          z-20
-          hidden
-          w-64
-          overflow-y-auto
-          bg-white
-          dark:bg-gray-800
-          md:block
-          flex-shrink-0
-        ">
-         <div class="py-4 text-gray-500 dark:text-gray-400">
-            <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/">
-               Being Care Foundation
-            </a>
-            <ul class="mt-6">
-               <li class="relative px-6 py-3">
-                  <span class="
-                  absolute
-                  inset-y-0
-                  lefl-0
-                  w-1
-                  bg-orange-600
-                  rounded-tr-lg rounded-br-lg
-                " aria-hidden="true"></span>
-                  <a class="
-                  inline-flex
-                  items-center
-                  w-full
-                  text-sm
-                  font-semibold
-                  text-gray-800
-                  transition-colors
-                  duration-150
-                  hover:text-gray-800
-                  dark:hover:text-gray-200 dark:text-gray-100
-                " href="/dashboard">
-                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                        </path>
-                     </svg>
-                     <span class="ml-4">Dashboard</span>
-                  </a>
-               </li>
-            </ul>
-            <ul>
-               <li class="relative px-6 py-3">
-                  <a class="
-                  inline-flex
-                  items-center
-                  w-full
-                  text-sm
-                  font-semibold
-                  transition-colors
-                  duration-150
-                  hover:text-gray-800
-                  dark:hover:text-gray-200
-                " href="forms.html">
-                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                        </path>
-                     </svg>
-                     <span class="ml-4">Send Query</span>
-                  </a>
-               </li>
-            </ul>
-            <div class="px-6 my-6">
-               <button class="
-                flex
-                items-center
-                justify-between
-                px-4
-                py-2
-                text-sm
-                font-medium
-                leading-5
-                text-white
-                transition-colors
-                duration-150
-                bg-orange-600
-                border border-transparent
-                rounded-lg
-                active:bg-orange-600
-                hover:bg-orange-700
-                focus:outline-none focus:shadow-outline-orange
-              ">
-                  Donate Now
-                  <span class="ml-2" aria-hidden="true">+</span>
-               </button>
+   <div id="shy640-wrapper">
+      <div id="shy640-page">
+         {{!-- top small header --}}
+         <div class="header-top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 col-sm-6 text-left shy640-link">
+                     <a href="/faq">FAQ</a>
+                     <a href="#" onclick="commonMessage()">Forum</a>
+                     <a href="#">Contact</a>
+                  </div>
+                  <div class="col-md-6 col-sm-6 text-right shy640-social">
+                     <a href="#" class="grow"><i class="icon-facebook2"></i></a>
+                     <a href="#" class="grow"><i class="icon-twitter2"></i></a>
+                     <a href="#" class="grow"><i class="icon-instagram2"></i></a>
+                     <a href="#" class="grow"><i class="icon-linkedin2"></i></a>
+                  </div>
+               </div>
             </div>
          </div>
-      </aside>
-      <!-- Mobile sidebar -->
-      <!-- Backdrop -->
-      <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
-         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0" class="
-          fixed
-          inset-0
-          z-10
-          flex
-          items-end
-          bg-black bg-opacity-50
-          sm:items-center sm:justify-center
-        "></div>
-      <aside class="
-          fixed
-          inset-y-0
-          z-20
-          flex-shrink-0
-          w-64
-          mt-16
-          overflow-y-auto
-          bg-white
-          dark:bg-gray-800
-          md:hidden
-        " x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
-         x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0 transform -translate-x-20" @click.away="closeSideMenu"
-         @keydown.escape="closeSideMenu">
-         <div class="py-4 text-gray-500 dark:text-gray-400">
-            <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/">
-               Being Care Foundation
-            </a>
-            <ul class="mt-6">
-               <li class="relative px-6 py-3">
-                  <span class="
-                  absolute
-                  inset-y-0
-                  left-0
-                  w-1
-                  bg-orange-600
-                  rounded-tr-lg rounded-br-lg
-                " aria-hidden="true"></span>
-                  <a class="
-                  inline-flex
-                  items-center
-                  w-full
-                  text-sm
-                  font-semibold
-                  text-gray-800
-                  transition-colors
-                  duration-150
-                  hover:text-gray-800
-                  dark:hover:text-gray-200 dark:text-gray-100
-                " href="/dashboard">
-                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                        </path>
-                     </svg>
-                     <span class="ml-4">Dashboard</span>
-                  </a>
-               </li>
-            </ul>
-            <ul>
-               <li class="relative px-6 py-3">
-                  <a class="
-                  inline-flex
-                  items-center
-                  w-full
-                  text-sm
-                  font-semibold
-                  transition-colors
-                  duration-150
-                  hover:text-gray-800
-                  dark:hover:text-gray-200
-                " href="/forms">
-                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                        </path>
-                     </svg>
-                     <span class="ml-4">Send Query</span>
-                  </a>
-               </li>
-            </ul>
-            <div class="px-6 my-6">
-               <button class="
-                flex
-                items-center
-                justify-between
-                px-4
-                py-2
-                text-sm
-                font-medium
-                leading-5
-                text-white
-                transition-colors
-                duration-150
-                bg-orange-600
-                border border-transparent
-                rounded-lg
-                active:bg-orange-600
-                hover:bg-orange-700
-                focus:outline-none focus:shadow-outline-orange
-              ">
-                  Donate Now
-                  <span class="ml-2" aria-hidden="true">+</span>
-               </button>
-            </div>
-         </div>
-      </aside>
-      <div class="flex flex-col flex-1 w-full">
-         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800"
-            style="display: flex; position: absolute; right: 3%">
-            <div class="
-              container
-              flex
-              items-center
-              justify-between
-              h-full
-              px-6
-              mx-auto
-              text-orange-600
-              dark:text-orange-300
-            ">
-               <!-- Mobile hamburger -->
-               <button class="
-                p-1
-                mr-5
-                -ml-1
-                rounded-md
-                md:hidden
-                focus:outline-none focus:shadow-outline-orange
-              " @click="toggleSideMenu" aria-label="Menu">
-                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                     <path fill-rule="evenodd"
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd"></path>
-                  </svg>
-               </button>
-
-               <div class="">
-                  <ul class="flex items-right flex-shrink-0 space-x-6">
-                     <!-- Theme toggler -->
-                     <li class="flex">
-                        <button class="
-                      rounded-md
-                      focus:outline-none focus:shadow-outline-orange
-                    " @click="toggleTheme" aria-label="Toggle color mode">
-                           <template x-if="!dark">
-                              <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                              </svg>
-                           </template>
-                           <template x-if="dark">
-                              <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                 <path fill-rule="evenodd"
-                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                    clip-rule="evenodd"></path>
-                              </svg>
-                           </template>
-                        </button>
-                     </li>
-                     <!-- Profile menu -->
-                     <li class="relative">
-                        <button class="
-                      align-middle
-                      rounded-full
-                      focus:shadow-outline-orange focus:outline-none
-                    " @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
-                           aria-haspopup="true">
-                           <img class="object-cover w-8 h-8 rounded-full"
-                              src="./img/user.png"
-                              alt="" aria-hidden="true" />
-                        </button>
-                        <template x-if="isProfileMenuOpen">
-                           <ul x-transition:leave="transition ease-in duration-150"
-                              x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                              @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu" class="
-                        absolute
-                        right-0
-                        w-56
-                        p-2
-                        mt-2
-                        space-y-2
-                        text-gray-600
-                        bg-white
-                        border border-gray-100
-                        rounded-md
-                        shadow-md
-                        dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700
-                      " aria-label="submenu">
-                              <li class="flex">
-                                 <a class="
-                            inline-flex
-                            items-center
-                            w-full
-                            px-2
-                            py-1
-                            text-sm
-                            font-semibold
-                            transition-colors
-                            duration-150
-                            rounded-md
-                            hover:bg-gray-100 hover:text-gray-800
-                            dark:hover:bg-gray-800 dark:hover:text-gray-200
-                          " href="#">
-                                    <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none" stroke-linecap="round"
-                                       stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                       stroke="currentColor">
-                                       <path
-                                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                       </path>
-                                    </svg>
-                                    <span>Log out</span>
-                                 </a>
-                              </li>
+         {{!-- start:header --}}
+         <header id="shy640-header-section" class="sticky-banner" style="border-bottom: 1px solid rgb(201, 199, 199);">
+            <div class="container">
+               <div class="nav-header">
+                  <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"><i></i></a>
+                  <a href="/"><img src="./images/logo.jpg" alt="Being Care Foundation Logo!"
+                        style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))" /></a>
+                  <nav id="shy640-menu-wrap" role="navigation">
+                     <ul class="sf-menu" id="shy640-primary-menu">
+                        <li id="home">
+                           <a href="/">Home</a>
+                        </li>
+                        <li id="">
+                           <a href="#" class="shy640-sub-ddown">Projects</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="#"><a href="#">Animal Care</a></li>
+                              <li id=""><a href="#">Free FirstAid Program</a></li>
+                              <li id=""><a href="#">Water Care</a></li>
                            </ul>
-                        </template>
-                     </li>
-                  </ul>
+                        </li>
+                        <li id="about"><a href="/about">About</a></li>
+                        <li id="blog"><a href="/blog">Blog</a></li>
+                        <li id="contact"><a href="/contact">Contact</a></li>
+                        {{#if isAuthenticated}}
+                        <li id="user-button" class="btn btn-default btn-rounded my-3">
+                           <a href="#" class="shy640-sub-ddown">{{username}}</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
+                              <li id="dashboard"><a href="/logout">Logout<i class="icon-signout"></i></a></li>
+                           </ul>
+                        </li>
+                        {{else}}
+                        <li id="join-button" class="btn btn-default btn-rounded my-3">
+                           <a href="#" class="shy640-sub-ddown">Join</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="register-button"><a href="/register">Register</a></li>
+                              <li id="login-button"><a href="/login">Login</a></li>
+                           </ul>
+                        </li>
+                        {{/if}}
+                     </ul>
+                  </nav>
                </div>
             </div>
          </header>
-         <main class="h-full overflow-y-auto">
-            <div class="container px-6 mx-auto grid">
-               <h2 class="
-                my-6
-                text-2xl
-                font-semibold
-                text-gray-700
-                dark:text-gray-200
-              ">
-                  Dashboard
-               </h2>
+         {{!-- end:header --}}
+         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+         <div class="container bootstrap snippets bootdey">
+            <div class="row">
+               <div class="profile-nav col-md-3">
+                  <div class="panel">
+                     <div class="user-heading round">
+                        <a href="#">
+                           <div class="hvrbox">
+                              <img src="./images/user.png" alt="Profile Image" class="hvrbox-layer_bottom">
+                              <div class="hvrbox-layer_top">
+                                 <div class="hvrbox-text">upload/update image...</div>
+                              </div>
+                           </div>
+                        </a>
+                        <h1>{{username}}</h1>
+                        <p>{{user_email}}</p>
+                     </div>
 
-               <!-- Cards -->
-               <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-                  <!-- Card -->
-                  <div class="
-                  flex
-                  items-center
-                  p-4
-                  bg-white
-                  rounded-lg
-                  shadow-xs
-                  dark:bg-gray-800
-                ">
-                     <div class="
-                    p-3
-                    mr-4
-                    text-green-500
-                    bg-green-100
-                    rounded-full
-                    dark:text-green-100 dark:bg-green-500
-                  ">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                           <path fill-rule="evenodd"
-                              d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-                              clip-rule="evenodd"></path>
-                        </svg>
-                     </div>
-                     <div>
-                        <p class="
-                      mb-2
-                      text-sm
-                      font-medium
-                      text-gray-600
-                      dark:text-gray-400
-                    ">
-                           Total Donation
-                        </p>
-                        <p class="
-                      text-lg
-                      font-semibold
-                      text-gray-700
-                      dark:text-gray-200
-                    ">
-                           {{amount}}
-                        </p>
-                     </div>
+                     <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="#"> <i class="fa fa-calendar"></i> Messages <span
+                                 class="label label-primary pull-right r-activity">9</span></a></li>
+                     </ul>
                   </div>
                </div>
-            </div>
-
-            <!-- New Table -->
-            <div class="w-full overflow-hidden rounded-lg shadow-xs">
-               <div class="w-full overflow-x-auto">
-                  <table class="w-full whitespace-no-wrap">
-                     <thead>
-                        <tr class="
-                      text-xs
-                      font-semibold
-                      tracking-wide
-                      text-left text-gray-500
-                      uppercase
-                      border-b
-                      dark:border-gray-700
-                      bg-gray-50
-                      dark:text-gray-400 dark:bg-gray-800
-                    ">
-                           <th class="px-4 py-3">Name</th>
-                           <th class="px-4 py-3">Amount</th>
-                           <th class="px-4 py-3">Status</th>
-                           <th class="px-4 py-3">Date</th>
-                        </tr>
-                     </thead>
-                     <tbody class="
-                    bg-white
-                    divide-y
-                    dark:divide-gray-700 dark:bg-gray-800
-                  ">
-                        <tr class="text-gray-700 dark:text-gray-400">
-                           <td class="px-4 py-3">
-                              <div class="flex items-center text-sm">
-                                 <!-- Avatar with inset shadow -->
-                                 <div class="
-                            relative
-                            hidden
-                            w-8
-                            h-8
-                            mr-3
-                            rounded-full
-                            md:block
-                          ">
-                                    <img class="object-cover w-full h-full rounded-full"
-                                       src="./img/user.png"
-                                       alt="" loading="lazy" />
-                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+               <div class="profile-info col-md-9">
+                  <div class="panel">
+                     <form>
+                        <textarea placeholder="Whats in your mind today?" rows="2"
+                           class="form-control input-lg p-text-area"></textarea>
+                     </form>
+                     <footer class="panel-footer">
+                        <button class="btn btn-primary pull-right">Post</button>
+                        <ul class="nav nav-pills">
+                           <li>
+                              <a href="#"><i class="fa fa-map-marker"></i></a>
+                           </li>
+                           <li>
+                              <a href="#"><i class="fa fa-camera"></i></a>
+                           </li>
+                           <li>
+                              <a href="#"><i class=" fa fa-film"></i></a>
+                           </li>
+                           <li>
+                              <a href="#"><i class="fa fa-microphone"></i></a>
+                           </li>
+                        </ul>
+                     </footer>
+                  </div>
+                  <div class="panel">
+                     <div class="bio-graph-heading">
+                        <i>"We Being Care Foundation work for the betterment of society in every possible way"</i>
+                     </div>
+                     <div class="panel-body bio-graph-info">
+                        <h1>Details</h1>
+                        {{!-- <div class="row">
+                           <div class="bio-row">
+                              <p><span>Full Name </span>: {{full_name}}</p>
+                           </div>
+                           <div class="bio-row">
+                              <p><span>Username </span>: {{username}}</p>
+                           </div>
+                           <div class="bio-row">
+                              <p><span>Email </span>: {{email}}</p>
+                           </div>
+                           <div class="bio-row">
+                              <p><span>Phone</span>: {{phone}}</p>
+                           </div>
+                           <div class="bio-row">
+                              <p><span>Password </span>: {{password}}</p>
+                           </div>
+                        </div> --}}
+                        <form class="is-readonly" method="PATCH" action="/user/save">
+                           <div class="form-group">
+                              <label for="Full Name">Full Name</label>
+                              <input type="text" class="form-control is-disabled" id="full-name" placeholder="Name"
+                                 value="{{full_name}}" disabled>
+                           </div>
+                           <div class="form-group">
+                              <label for="Username">Username</label>
+                              <input type="text" class="form-control is-disabled" id="username" placeholder="Username"
+                                 value="{{username}}" disabled>
+                           </div>
+                           <div class="form-group">
+                              <label for="Email">Email address</label>
+                              <input type="email" class="form-control is-disabled" id="email" placeholder="example@gmail.com"
+                                 value="{{email}}" disabled>
+                           </div>
+                           <div class="form-group">
+                              <label for="Phone">Phone Number</label>
+                              <input type="tel" class="form-control is-disabled" id="phone" placeholder="+919473792730"
+                                 value="{{phone}}" disabled required>
+                           </div>
+                           <div class="form-group">
+                              <label for="Password">Password</label>
+                              <input type="password" class="form-control is-disabled" id="password"
+                                 placeholder="Min 8 Character" value="{{password}}" disabled required>
+                           </div>
+                           <button type="button" class="btn btn-default btn-edit js-edit">Edit</button>
+                           <button type="submit" class="btn btn-default btn-save js-save">Save</button>
+                        </form>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="panel">
+                              <div class="panel-body">
+                                 <div class="bio-chart">
+                                    <div style="display:inline;width:100px;height:100px;"><canvas width="100"
+                                          height="100px"></canvas><input class="knob" data-width="100" data-height="100"
+                                          data-displayprevious="true" data-thickness=".2" value="{{donation_amount}}"
+                                          data-fgcolor="#e06b7d" data-bgcolor="#e8e8e8"
+                                          style="width: 54px; height: 33px; position: absolute; vertical-align: middle; margin-top: 33px; margin-left: -77px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 20px; line-height: normal; font-family: Arial; text-align: center; color: rgb(224, 107, 125); padding: 0px; -webkit-appearance: none; background: none;">
+                                    </div>
                                  </div>
-                                 <div>
-                                    <p class="font-semibold">Name</p>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">
-                                       Username
-                                    </p>
+                                 <div class="bio-desk">
+                                    <h4 class="red">Donation 1</h4>
+                                    <p>{{donator_name}}</p>
+                                    <p>{{donation_date}}</p>
                                  </div>
                               </div>
-                           </td>
-                           <td class="px-4 py-3 text-sm">{{amount}}</td>
-                           <td class="px-4 py-3 text-xs">
-                              <span class="
-                          px-2
-                          py-1
-                          font-semibold
-                          leading-tight
-                          text-green-700
-                          bg-green-100
-                          rounded-full
-                          dark:bg-green-700 dark:text-green-100
-                        ">
-                                 Approved
-                              </span>
-                           </td>
-                           <td class="px-4 py-3 text-sm">dd/mm/yyyy</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
-
-               <!-- Charts -->
-               <h2 class="
-                my-6
-                text-2xl
-                font-semibold
-                text-gray-700
-                dark:text-gray-200
-              ">
-                  Donation Charts
-               </h2>
-               <div class="grid gap-6 mb-8 md:grid-cols-2">
-                  <div class="
-                  min-w-0
-                  p-4
-                  bg-white
-                  rounded-lg
-                  shadow-xs
-                  dark:bg-gray-800
-                ">
-                     <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                        All Time Donation
-                     </h4>
-                     <canvas id="pie"></canvas>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
-         </main>
+         </div>
+         {{>footer}}
       </div>
    </div>
 
@@ -567,9 +269,8 @@
    <!-- Main JS -->
    <script src="./js/main.js"></script>
    <script src="./js/login.js"></script>
-   <script src="./js/charts-pie.js"></script>
-   <script src="./js/focus-trap.js"></script>
-   <script src="./js/init-alpine.js"></script>
+   <script src="./js/dashboard.js"></script>
+
 </body>
 
 </html>
