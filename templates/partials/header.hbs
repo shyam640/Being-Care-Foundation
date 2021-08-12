@@ -1,4 +1,10 @@
 {{!-- top small header --}}
+{{#if success}}
+{{successmsg}}
+{{/if}}
+{{#if error}}
+{{errormsg}}
+{{/if}}
 <div class="header-top">
   <div class="container">
     <div class="row">
@@ -39,6 +45,14 @@
           <li id="about"><a href="/about">About</a></li>
           <li id="blog"><a href="/blog">Blog</a></li>
           <li id="contact"><a href="/contact">Contact</a></li>
+          {{#if isAuthenticated}}
+          <li id="user-button" class="btn btn-default btn-rounded my-3">
+            <a href="#" class="shy640-sub-ddown">{{username}}</a>
+            <ul class="shy640-sub-menu">
+              <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
+            </ul>
+          </li>
+          {{else}}
           <li id="join-button" class="btn btn-default btn-rounded my-3">
             <a href="#" class="shy640-sub-ddown">Join</a>
             <ul class="shy640-sub-menu">
@@ -46,6 +60,7 @@
               <li id="login-button"><a href="/login">Login</a></li>
             </ul>
           </li>
+          {{/if}}
         </ul>
       </nav>
     </div>

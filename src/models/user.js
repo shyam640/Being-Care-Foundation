@@ -46,10 +46,6 @@ const userSchema = new mongoose.Schema(
             }
          }
       },
-      resetLink: {
-         type: String,
-         default: ''
-       },
       tokens : [{
          token : {
             type : String,
@@ -75,7 +71,7 @@ userSchema.methods.toJSON = async function(){
 // methods allows one to use custom function on instances sometimes they are called instance function.
 userSchema.methods.generateAuthToken = async function() {
    const user = this;
-   const token = jwt.sign({ _id : user._id.toString() },process.env.JWT_SECRET_CODE);
+   const token = jwt.sign({ _id : user._id.toString() },process.env.JWT_SECRET_CODE,{expiresIn : '30 days'});
    user.tokens = user.tokens.concat({token}); 
    await user.save();
    return token;
