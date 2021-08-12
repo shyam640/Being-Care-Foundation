@@ -11,6 +11,7 @@ const flash = require('connect-flash');
 const User = require('./models/user');
 const cookieParser = require('cookie-parser');
 const auth = require('./middleware/auth');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -153,7 +154,7 @@ app.get('/dashboard',(req,res) => {
     var list = parseCookies(req);
     if(list.isAuthenticated){
         res.render('dashboard',{
-            user : req.user
+            title : 'Being Care Foundation | Dashboard'
         });
     }else{
         res.render('login',{
@@ -162,15 +163,28 @@ app.get('/dashboard',(req,res) => {
     }
 });
 
-app.get('/logout',auth, async (req, res) => {
+app.get('/logout', async (req, res) => {
+    // console.log(req);
+    var list = parseCookies(req);
+    // let decoded_id = jwt.decode();
+    const decoded = jwt.verify(list.user_token , process.env.JWT_SECRET_CODE);
+    const user = await User.findOne({ _id : decoded._id , 'tokens.token' : list.user_token});
+    if(!user){
+        throw new Error();
+    }
     try{
-        req.user.tokens = req.user.tokens.filter((token) => {
-           return token.token !== req.token;
+        user.tokens = user.tokens.filter((token) => {
+            return token.token !== list.user_token;
         });
-        await req.user.save();
-        res.send();
+        await user.save();
+        res.clearCookie("user_token");
+        res.clearCookie("connect.sid");
+        res.clearCookie("username");
+        res.clearCookie("isAuthenticated");
+        res.redirect('/');
      }catch(e){
-        res.status(500).send();
+         console.log(e);
+        res.status(500).redirect('/500');
      }
 });
 

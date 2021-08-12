@@ -1,9 +1,9 @@
 {{!-- top small header --}}
 {{#if success}}
-{{successmsg}}
+{{>successmsg}}
 {{/if}}
 {{#if error}}
-{{errormsg}}
+{{>errormsg}}
 {{/if}}
 <div class="header-top">
   <div class="container">
@@ -50,6 +50,7 @@
             <a href="#" class="shy640-sub-ddown">{{username}}</a>
             <ul class="shy640-sub-menu">
               <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
+              <li id="dashboard"><a href="/logout">Logout<i class="icon-signout"></i></a></li>
             </ul>
           </li>
           {{else}}
