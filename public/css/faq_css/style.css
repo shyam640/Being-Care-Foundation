@@ -1268,7 +1268,7 @@ u,
   border-radius: 0.25em;
   border-radius: var(--btn-radius, 0.25em);
 }
-.btn--primary {
+.btn-primary {
   background-color: hsl(220, 90%, 56%);
   background-color: var(--color-primary, #2a6df4);
   color: hsl(0, 0%, 100%);
@@ -3297,11 +3297,11 @@ li:last-child .cd-faq__category {
 }
 .cd-faq__items {
   position: fixed;
-  z-index: 1;
+  z-index: 100000;
   height: 100%;
-  width: 90%;
+  width: 70%;
   top: 0;
-  right: 0;
+  left: 0;
   background: hsl(0, 0%, 100%);
   background: var(--cd-color-4);
   padding: 0 1.25em 1.25em;
@@ -3310,8 +3310,8 @@ li:last-child .cd-faq__category {
   -webkit-overflow-scrolling: touch;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translateZ(0) translateX(100%);
-  transform: translateZ(0) translateX(100%);
+  -webkit-transform: translateZ(0) translateX(-100%);
+  transform: translateZ(0) translateX(-100%);
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
@@ -3579,6 +3579,8 @@ body {
   background-color: hsl(0, 0%, 95%);
   background-color: var(--color-contrast-lower);
 }
+
+
 .cd-header {
   --header-height: 180px;
   height: 180px;
@@ -3615,4 +3617,9 @@ body {
   );
   font-size: 0.83333em;
   font-size: var(--text-sm);
+}
+
+.shy640-cover .btn {
+  padding: 0.5em !important;
+  opacity: 0.9;
 }

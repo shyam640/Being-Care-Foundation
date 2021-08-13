@@ -46,11 +46,71 @@
 </head>
 
 <style>
-   a{
+   a {
       text-decoration: none;
    }
-   .form-control{
+
+   .form-control {
       font-size: 14px;
+   }
+
+   input {
+      width: calc(100% - 16px);
+      padding: 10px 0 10px 10px;
+      margin: 0;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      box-shadow: 1px 1px 1px #B2B2B2, -1px -1px 1px #292929;
+      position: relative;
+   }
+
+   input:focus {
+      outline: none;
+      border: 2px solid transparent;
+   }
+
+   input.isRequired {
+      border: 2px solid #e74c3c;
+   }
+
+   /*used a button so to easily add fontawesome's icon to the submit*/
+   button {
+      border: none;
+      background: #3498db;
+      width: 80px;
+      height: 35px;
+      padding: 0;
+      margin-top: 16px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #292929, -1px -1px 1px #B2B2B2;
+      border-radius: 5px;
+      transition: all .3s;
+      color: white;
+      font-weight: 700;
+   }
+
+   button:hover {
+      background: #2980b9;
+   }
+
+   button:focus {
+      box-shadow: 1px 1px 1px #B2B2B2, -1px -1px 1px #292929;
+   }
+
+   /*style for the error box*/
+   .errorMessages {
+      width: calc(100% - 8px);
+      padding: 20px 0;
+      background: #e74c3c;
+      color: white;
+      border: 2px solid #EC644B;
+      display: none;
+   }
+
+   .errorMessages li {
+      padding: 0 0 5px 0;
+      margin: 0 0 0 30px;
+      font-family: Open Sans, sans serif;
    }
 </style>
 
@@ -126,14 +186,15 @@
                            <label data-error="wrong" data-success="right" for="user-email-phone">Your
                               Email/Phone</label>
                            <input name="emailphone" type="email tel" id="user-email-phone"
-                              class="form-control form-control-sm validate" required>
+                              class="form-control form-control-sm validate" required onblur="validateField(this)">
 
                            <i class="icon-lock prefix"></i>
                            <label data-error="wrong" data-success="right" for="user-password">Your Password</label>
                            <input name="password" type="password" id="user-password"
-                              class="form-control form-control-sm validate" required>
+                              class="form-control form-control-sm validate" required onblur="validateField(this)">
 
-                           <button class="btn btn-primary" style="font-size: 16px; font-weight:500;" type="submit">Log in <i class="icon-login ml-1"></i></button>
+                           <button class="btn btn-primary" style="font-size: 16px; font-weight:500;width:10em;" type="submit">Log
+                              in <i class="icon-login ml-1"></i></button>
                         </form>
                         {{!-- Footer --}}
                         <div class="modal-footer">
@@ -191,6 +252,85 @@
    let commonMessage = () => {
       alert("This Page will be available soon...");
    };
+
+   function validateField(input) {
+      if (input.value.length < 1) {
+         //red border
+         input.style.borderColor = "#e74c3c";
+
+      } else if (input.type == "email") {
+         const emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+         const email = input.value;
+         if (input.value.indexOf("@") != -1 && input.value.indexOf(".") != -1) {
+            //green border
+            input.style.borderColor = "#2ecc71";
+         } else if (email.match(emailPattern)) {
+            // green border
+            input.style.borderColor = "#2ecc71";
+         } else {
+            //red border
+            input.style.borderColor = "#e74c3c";
+         }
+
+      } else {
+         //green border
+         input.style.borderColor = "#2ecc71";
+      }
+
+      const pass = document.getElementById('password').value;
+      const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
+      if (pass.match(passwordPattern)) {
+         // green border
+         input.style.borderColor = "#2ecc71";
+      } else {
+         //red border
+         input.style.borderColor = "#e74c3c";
+      }
+   }
+
+   var createAllErrors = function () {
+      var form = $(this),
+         errorList = $("ul.errorMessages", form);
+
+      var showAllErrorMessages = function () {
+         errorList.empty();
+
+         // Find all invalid fields within the form.
+         var invalidFields = form.find(":invalid").each(function (index, node) {
+
+            // Find the field's corresponding label
+            var label = $("label[for=" + node.id + "] "),
+               // Opera incorrectly does not fill the validationMessage property.
+               message = node.validationMessage || 'Invalid value.';
+
+            errorList
+               .show()
+               .append("<li><span>" + label.html() + "</span> " + message + "</li>");
+         });
+      };
+
+      // Support Safari
+      form.on("submit", function (event) {
+         if (this.checkValidity && !this.checkValidity()) {
+            $(this).find(":invalid").first().focus();
+            event.preventDefault();
+         }
+      });
+
+      $("input[type=submit], button:not([type=button])", form)
+         .on("click", showAllErrorMessages);
+
+      $("input", form).on("keypress", function (event) {
+         var type = $(this).attr("type");
+         if (/date|email|month|number|search|tel|text|time|url|week/.test(type)
+            && event.keyCode == 13) {
+            showAllErrorMessages();
+         }
+      });
+   };
+
+   $("form").each(createAllErrors);
+
 </script>
 
 </html>
