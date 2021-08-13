@@ -27,7 +27,7 @@
   <div class="container">
     <div class="nav-header">
       <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"><i></i></a>
-      <a href="/"><img src="./images/logo.jpg" alt="Being Care Foundation Logo!"
+      <a href="/"><img src="./images/logo_icon.png" alt="Being Care Foundation Logo!"
           style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))" /></a>
       <nav id="shy640-menu-wrap" role="navigation">
         <ul class="sf-menu" id="shy640-primary-menu">
@@ -78,12 +78,12 @@
 {{!-- Big image section --}}
 <div class="shy640-hero">
   <div class="shy640-overlay"></div>
-  <div class="shy640-cover text-center" data-stellar-background-ratio="0.5"
-    style="background-image: url(./images/cover_bg_1.jpg)">
-    <div class="desc animate-box">
+  <div class="shy640-cover text-center ignore-invert img-responsive" data-stellar-background-ratio="0.5"
+    style="background-image: url('{{imageurl}}')">
+    <div class="desc animate-box" style="z-index: 10;">
       {{>message}}
       <span>We Care and make Aware</span>
-      <span><a class="btn btn-primary btn-lg" href="https://rzp.io/l/MrSqoAd" target="_blank">Donate Now</a></span>
+      <span><a class="btn btn-primary btn-lg ignore-invert" href="https://rzp.io/l/MrSqoAd" target="_blank">Donate Now</a></span>
     </div>
   </div>
 </div>

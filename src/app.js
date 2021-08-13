@@ -58,7 +58,8 @@ app.get('',(req, res) => {
        message1: 'Donate for the One ',
        message2: `You'll get thousand`,
        username,
-       isAuthenticated
+       isAuthenticated,
+       imageurl : './images/hands_in_hand.jpg'
    });
 });
 
@@ -72,7 +73,8 @@ app.get('/about',(req,res) => {
         message1: 'About ',
         message2: `Us`,
         username,
-        isAuthenticated
+        isAuthenticated,
+        imageurl : './images/about_us.jpg'
     });
 });
 
@@ -86,7 +88,8 @@ app.get('/blog',(req,res) => {
         message1: 'Blogs & ',
         message2: `Latest Updates!`,
         username,
-        isAuthenticated
+        isAuthenticated,
+        imageurl : './images/blog.jpg'
     });
 });
 
@@ -100,7 +103,8 @@ app.get('/contact',(req,res) => {
         message1: 'Contact ',
         message2: `Us`,
         username,
-        isAuthenticated
+        isAuthenticated,
+        imageurl : './images/contact_us.jpg'
     });
 });
 
@@ -114,7 +118,8 @@ app.get('/faq',(req,res) => {
         message1: 'Frequently ',
         message2: `Asked Questions`,
         username,
-        isAuthenticated
+        isAuthenticated,
+        imageurl : './images/faqs.jpg'
     });
 });
 
