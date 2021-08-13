@@ -165,6 +165,7 @@ app.get('/dashboard',async (req,res) => {
             email : user.email,
             phone : user.phone,
             password : user.password,
+            tokensize : user.tokens.length,
         });
     }else{
         res.render('login',{
@@ -214,11 +215,10 @@ app.post('/logoutAll',auth, async (req,res) => {
      });
  });
 
-// Global variable for flash messages
-app.use((req, res, next)=>{
-    app.locals.success = req.flash('success');
-    app.locals.error = req.flash('error');
-    next();
+app.get('/error',(req,res) => {
+    res.render('404',{
+        title : 'Being Care Foundation | Error'
+    });
 });
 
 function parseCookies (request) {

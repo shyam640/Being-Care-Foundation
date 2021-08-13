@@ -109,6 +109,7 @@
                            </ul>
                         </li>
                         {{/if}}
+                        <li>{{>darkmode}}</li>
                      </ul>
                   </nav>
                </div>
@@ -135,8 +136,8 @@
 
                      <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="#"> <i class="fa fa-calendar"></i> Messages <span
-                                 class="label label-primary pull-right r-activity">9</span></a></li>
+                        <li><a href="#"> <i class="fa fa-calendar"></i> Messages <span class="label label-primary pull-right r-activity">0</span></a></li>
+                        <li><a href="#"> <i class="icon-log-out"></i> Logout All Devices <span class="label label-danger pull-right r-activity">{{tokensize}}</span></a></li>
                      </ul>
                   </div>
                </div>

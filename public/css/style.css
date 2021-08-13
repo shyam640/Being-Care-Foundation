@@ -5,6 +5,15 @@
    font-weight: normal;
    font-style: normal;
  }
+
+ html {
+  
+}
+
+html[data-theme='dark'] {
+    background: #000;
+    filter: invert(1) hue-rotate(180deg)
+}
  
  body {
    font-family: "Open Sans", Arial, sans-serif;
@@ -18,6 +27,7 @@
  body.shy640-offcanvas {
    overflow: hidden;
  }
+
  
  a {
    color: #ff5722;
@@ -353,6 +363,8 @@
    z-index: 1022;
    background: #fff;
  }
+
+
  
  .nav-header {
    position: relative;
