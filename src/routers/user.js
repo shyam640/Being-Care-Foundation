@@ -11,6 +11,7 @@ router.post('/users/register',async (req,res) => {
       const token = await user.generateAuthToken();
       res.redirect('/login');
    }catch(e){
+      console.log(e);
       res.redirect('/login');
    }
 });
@@ -23,6 +24,7 @@ router.post('/users/login',async (req,res) => {
       res.cookie('user_token',token);        // 30 days
       if(token){
          res.cookie('isAuthenticated',true);
+         
       }
       res.redirect('/');
    }catch(e){

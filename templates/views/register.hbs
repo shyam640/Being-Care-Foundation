@@ -218,15 +218,15 @@
                            <label data-error="wrong" data-success="right" for="user-password">Your Password</label><abbr
                               title="Required"> *</abbr>
                            <input name="password" type="password" id="user-password" placeholder="password"
-                              class="form-control form-control-sm validate" required onblur="validateField(this)"
-                              autocomplete="off">
+                              class="form-control form-control-sm validate" required
+                              onblur="passwordValidate(this.value)" autocomplete="off">
 
                            <i class="icon-lock prefix"></i>
                            <label data-error="wrong" data-success="right" for="modalLRInput15">Repeat
                               Password</label><abbr title="Required"> *</abbr>
-                           <input name="repeat-password" type="password" id="modalLRInput15"
+                           <input name="repeat-password" type="password" id="repeat-password"
                               placeholder="repeat-password" class="form-control form-control-sm validate" required
-                              onblur="validateField(this)" autocomplete="off">
+                              onblur="passwordMatch(document.getElementById('user-password').value,this.value)" autocomplete="off">
 
                            <button class="btn btn-primary" style="font-size: 16px; font-weight:500;width:10em;"
                               type="submit">Sign up <i class="icon-login ml-1"></i></button>
@@ -290,7 +290,7 @@
          input.style.borderColor = "#e74c3c";
 
       } else if (input.type == "email") {
-         const emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+         const emailPattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
          const email = input.value;
          if (input.value.indexOf("@") != -1 && input.value.indexOf(".") != -1) {
             //green border
@@ -317,25 +317,32 @@
          //green border
          input.style.borderColor = "#2ecc71";
       }
-      if (document.getElementById('password').value === document.getElementById('repeat-password').value) {
-         // green border
-         input.style.borderColor = "#2ecc71";
-      } else {
-         //red border
-         input.style.borderColor = "#e74c3c";
-      }
-      const pass = document.getElementById('password').value;
-      const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
-      if (pass.match(passwordPattern)) {
-         // green border
-         input.style.borderColor = "#2ecc71";
-      } else {
-         //red border
-         input.style.borderColor = "#e74c3c";
+   }
+
+   function passwordValidate(value) {
+      const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$";
+      if (value) {
+         if (value.match(/[a-z]/g) && value.match(/[A-Z]/g) && value.match(/[0-9]/g) && value.match(/[^a-zA-Z\d]/g) && value.length >= 8) {
+            // green border
+            document.getElementById('user-password').style.borderColor = "#2ecc71";
+         } else {
+            //red border
+            document.getElementById('user-password').style.borderColor = "#e74c3c";
+         }
       }
    }
 
-
+   function passwordMatch(value1,value2) {
+      if (value1 && value2) {
+         if (value1 === value2) {
+            // green border
+            document.getElementById('repeat-password').style.borderColor = "#2ecc71";
+         } else {
+            //red border
+            document.getElementById('repeat-password').style.borderColor = "#e74c3c";
+         }
+      }
+   }
 
    var createAllErrors = function () {
       var form = $(this),

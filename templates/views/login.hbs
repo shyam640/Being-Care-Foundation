@@ -14,14 +14,14 @@
 
    {{!-- Adding meta tags for content fetching from url --}}
    <meta property="og:title" content="Being Care Foundation" />
-   <meta property="og:image" content="../../public/images/logo.jpg" />
+   <meta property="og:image" content="../../public/images/logo_icon.png" />
    <meta property="og:url" content="https://beingcarefoundation.org" />
    <meta property="og:site_name" content="Being Care Foundation" />
    <meta property="og:description"
       content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
 
    {{!-- Adding small icon to the tab --}}
-   <link rel="shortcut icon" href="./images/logo.jpg" />
+   <link rel="shortcut icon" href="./images/logo_tab.png" />
    {{!-- animation css --}}
    <link rel="stylesheet" href="./libs/extra_libs/css/animate.css" />
    {{!-- Icomoon Icon Fonts --}}
@@ -140,7 +140,7 @@
             <div class="container">
                <div class="nav-header">
                   <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"><i></i></a>
-                  <a href="/"><img src="./images/logo.jpg" alt="Being Care Foundation Logo!"
+                  <a href="/"><img src="./images/logo_icon.png" alt="Being Care Foundation Logo!"
                         style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))" /></a>
                   <nav id="shy640-menu-wrap" role="navigation">
                      <ul class="sf-menu" id="shy640-primary-menu">
@@ -186,14 +186,16 @@
                            <label data-error="wrong" data-success="right" for="user-email-phone">Your
                               Email/Phone</label>
                            <input name="emailphone" type="email tel" id="user-email-phone"
-                              class="form-control form-control-sm validate" required onblur="validateField(this)">
+                              class="form-control form-control-sm validate" required onblur="validate(this.value)">
 
                            <i class="icon-lock prefix"></i>
                            <label data-error="wrong" data-success="right" for="user-password">Your Password</label>
                            <input name="password" type="password" id="user-password"
-                              class="form-control form-control-sm validate" required onblur="validateField(this)">
+                              class="form-control form-control-sm validate" required
+                              onblur="passwordValidate(this.value)">
 
-                           <button class="btn btn-primary" style="font-size: 16px; font-weight:500;width:10em;" type="submit">Log
+                           <button class="btn btn-primary" style="font-size: 16px; font-weight:500;width:10em;"
+                              type="submit">Log
                               in <i class="icon-login ml-1"></i></button>
                         </form>
                         {{!-- Footer --}}
@@ -253,38 +255,26 @@
       alert("This Page will be available soon...");
    };
 
-   function validateField(input) {
-      if (input.value.length < 1) {
+   function validate(value) {
+      if (value.match("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$") || value.match("^[+][0-9]*$")) {
+         // green border
+         document.getElementById('user-email-phone').style.borderColor = "#2ecc71";
+      } else {
          //red border
-         input.style.borderColor = "#e74c3c";
+         document.getElementById('user-email-phone').style.borderColor = "#e74c3c";
+      }
+   }
 
-      } else if (input.type == "email") {
-         const emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
-         const email = input.value;
-         if (input.value.indexOf("@") != -1 && input.value.indexOf(".") != -1) {
-            //green border
-            input.style.borderColor = "#2ecc71";
-         } else if (email.match(emailPattern)) {
+   function passwordValidate(value) {
+      const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$";
+      if (value) {
+         if (value.match(/[a-z]/g) && value.match(/[A-Z]/g) && value.match(/[0-9]/g) && value.match(/[^a-zA-Z\d]/g) && value.length >= 8) {
             // green border
-            input.style.borderColor = "#2ecc71";
+            document.getElementById('user-password').style.borderColor = "#2ecc71";
          } else {
             //red border
-            input.style.borderColor = "#e74c3c";
+            document.getElementById('user-password').style.borderColor = "#e74c3c";
          }
-
-      } else {
-         //green border
-         input.style.borderColor = "#2ecc71";
-      }
-
-      const pass = document.getElementById('password').value;
-      const passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
-      if (pass.match(passwordPattern)) {
-         // green border
-         input.style.borderColor = "#2ecc71";
-      } else {
-         //red border
-         input.style.borderColor = "#e74c3c";
       }
    }
 

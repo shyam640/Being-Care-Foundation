@@ -204,14 +204,23 @@ app.get('/logout', async (req, res) => {
      }
 });
 
-app.post('/logoutAll',auth, async (req,res) => {
+app.get('/user/logoutAll', async (req,res) => {
+    var list = parseCookies(req);
+    // let decoded_id = jwt.decode();
+    const decoded = jwt.verify(list.user_token , process.env.JWT_SECRET_CODE);
+    const user = await User.findOne({ _id : decoded._id , 'tokens.token' : list.user_token});
     try{
-       req.user.tokens = [];
-       await req.user.save();
-       res.send();
-    }catch(e){
-       res.status(500).send();
-    }
+        user.tokens = [];
+        await user.save();
+        res.clearCookie("user_token");
+        res.clearCookie("connect.sid");
+        res.clearCookie("username");
+        res.clearCookie("isAuthenticated");
+        res.redirect('/');
+     }catch(e){
+         console.log(e);
+        res.status(500).redirect('/500');
+     }
  });
 
  app.get('/redirect',(req,res) => {
@@ -225,6 +234,8 @@ app.get('/error',(req,res) => {
         title : 'Being Care Foundation | Error'
     });
 });
+
+
 
 function parseCookies (request) {
     var list = {},

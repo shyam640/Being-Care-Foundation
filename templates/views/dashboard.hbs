@@ -14,14 +14,14 @@
 
    {{!-- Adding meta tags for content fetching from url --}}
    <meta property="og:title" content="Being Care Foundation" />
-   <meta property="og:image" content="../../public/images/logo_icon.jpg" />
+   <meta property="og:image" content="../../public/images/logo_icon.png" />
    <meta property="og:url" content="https://beingcarefoundation.org" />
    <meta property="og:site_name" content="Being Care Foundation" />
    <meta property="og:description"
       content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
 
    {{!-- Adding small icon to the tab --}}
-   <link rel="shortcut icon" href="./images/logo_tab.jpg" />
+   <link rel="shortcut icon" href="./images/logo_tab.png" />
    {{!-- animation css --}}
    <link rel="stylesheet" href="../../../libs/extra_libs/css/animate.css" />
    {{!-- Icomoon Icon Fonts --}}
@@ -74,7 +74,7 @@
             <div class="container">
                <div class="nav-header">
                   <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"><i></i></a>
-                  <a href="/"><img src="./images/logo_icon.jpg" alt="Being Care Foundation Logo!"
+                  <a href="/"><img src="./images/logo_icon.png" alt="Being Care Foundation Logo!"
                         style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))" /></a>
                   <nav id="shy640-menu-wrap" role="navigation">
                      <ul class="sf-menu" id="shy640-primary-menu">
@@ -123,7 +123,7 @@
                   <div class="panel">
                      <div class="user-heading round">
                         <a href="#">
-                           <div class="hvrbox">
+                           <div href="/image/upload/me" class="hvrbox">
                               <img src="./images/user.png" alt="Profile Image" class="hvrbox-layer_bottom">
                               <div class="hvrbox-layer_top">
                                  <div class="hvrbox-text">upload/update image...</div>
@@ -136,8 +136,11 @@
 
                      <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="#"> <i class="fa fa-calendar"></i> Messages <span class="label label-primary pull-right r-activity">0</span></a></li>
-                        <li><a href="#"> <i class="icon-log-out"></i> Logout All Devices <span class="label label-danger pull-right r-activity">{{tokensize}}</span></a></li>
+                        <li><a href="#"> <i class="fa fa-calendar"></i> Messages <span
+                                 class="label label-primary pull-right r-activity">0</span></a></li>
+                        <li><a href="/user/logoutAll"> <i class="icon-log-out"></i> Logout All Devices <span
+                                 class="label label-danger pull-right r-activity">{{tokensize}}</span></a></li>
+                        <li><a href="https://rzp.io/l/MrSqoAd"> <i class="icon-coin-dollar"></i> Donate Now</a></li>
                      </ul>
                   </div>
                </div>
@@ -201,8 +204,8 @@
                            </div>
                            <div class="form-group">
                               <label for="Email">Email address</label>
-                              <input type="email" class="form-control is-disabled" id="email" placeholder="example@gmail.com"
-                                 value="{{email}}" disabled>
+                              <input type="email" class="form-control is-disabled" id="email"
+                                 placeholder="example@gmail.com" value="{{email}}" disabled>
                            </div>
                            <div class="form-group">
                               <label for="Phone">Phone Number</label>
@@ -219,7 +222,17 @@
                         </form>
                      </div>
                   </div>
-                  <div>
+
+                  <div class="panel">
+                     <div class="panel-body fetch-payments">
+                        <label for="Payment Id">Payment Id</label>
+                        <input class="form-control is-disabled" type="password" id="inputId">
+                        <input type="checkbox" onclick="Toggle()">
+                        <b>ShowId</b><br><br>
+                        <button type="button" class="btn btn-primary btn-edit js-edit">Fetch Donations</button>
+                     </div>
+                  </div>
+                  {{!-- <div>
                      <div class="row">
                         <div class="col-md-6">
                            <div class="panel">
@@ -241,7 +254,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> --}}
                </div>
             </div>
          </div>
@@ -273,5 +286,18 @@
    <script src="./js/dashboard.js"></script>
 
 </body>
+
+<script>
+   function Toggle() {
+      var temp = document.getElementById("inputId");
+      if (temp.type === "password") {
+         temp.type = "text";
+      }
+      else {
+         temp.type = "password";
+      }
+   }
+</script>
+
 
 </html>
