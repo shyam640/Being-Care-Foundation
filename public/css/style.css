@@ -555,6 +555,54 @@ figure {
   color: #ff5722 !important;
 }
 
+.switch {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.switch div {
+  position: relative;
+  display: block;
+  background: #eee;
+  width: auto;
+  border-radius: 50px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px;
+  margin: 4px;
+  margin-left: 7px;
+}
+
+#toggler{
+  width: 55px;
+}
+
+.fa-adjust {
+  transform: rotate(180deg);
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #999;
+  transition: 0.4s;
+  border-radius: 34px;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+input:checked + .slider {
+  transform: translateX(26px);
+}
+
 #shy640-work-section,
 #shy640-services-section,
 #shy640-content-section,

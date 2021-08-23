@@ -1,52 +1,15 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-  function OTPInput() {
-    const inputs = document.querySelectorAll("#phone-otp > *[id]");
-    for (let i = 0; i < inputs.length; i++) {
-      inputs[i].addEventListener("keydown", function (event) {
-        if (event.key === "Backspace") {
-          inputs[i].value = "";
-          if (i !== 0) inputs[i - 1].focus();
-        } else {
-          if (i === inputs.length - 1 && inputs[i].value !== "") {
-            return true;
-          } else if (event.keyCode > 47 && event.keyCode < 58) {
-            inputs[i].value = event.key;
-            if (i !== inputs.length - 1) inputs[i + 1].focus();
-            event.preventDefault();
-          } else if (event.keyCode > 64 && event.keyCode < 91) {
-            inputs[i].value = String.fromCharCode(event.keyCode);
-            if (i !== inputs.length - 1) inputs[i + 1].focus();
-            event.preventDefault();
-          }
-        }
-      });
-    }
-  }
-  OTPInput();
-});
-document.addEventListener("DOMContentLoaded", function (event) {
-  function OTPInput() {
-    const inputs = document.querySelectorAll("#email-otp > *[id]");
-    for (let i = 0; i < inputs.length; i++) {
-      inputs[i].addEventListener("keydown", function (event) {
-        if (event.key === "Backspace") {
-          inputs[i].value = "";
-          if (i !== 0) inputs[i - 1].focus();
-        } else {
-          if (i === inputs.length - 1 && inputs[i].value !== "") {
-            return true;
-          } else if (event.keyCode > 47 && event.keyCode < 58) {
-            inputs[i].value = event.key;
-            if (i !== inputs.length - 1) inputs[i + 1].focus();
-            event.preventDefault();
-          } else if (event.keyCode > 64 && event.keyCode < 91) {
-            inputs[i].value = String.fromCharCode(event.keyCode);
-            if (i !== inputs.length - 1) inputs[i + 1].focus();
-            event.preventDefault();
-          }
-        }
-      });
-    }
-  }
-  OTPInput();
-});
+window.onload = () => {
+  var instance = new Razorpay({
+    key_id: 'rzp_test_bMTizefZZLDlxd',
+    key_secret: '6PuLmczAtDdNj4niYj0FXMDm',
+  });
+
+  instance.payments
+  .all()
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+}

@@ -1,7 +1,23 @@
-<button  class="btn btn-default light btn-lg float-right" onclick="toggleTheme('dark');">Dark</button>
-<button  class="btn btn-default dark btn-lg float-right" onclick="toggleTheme('light');">Light</button>
+{{!-- <button  class="btn btn-default light btn-lg float-right" onclick="toggleTheme('dark');">Dark</button>
+<button  class="btn btn-default dark btn-lg float-right" onclick="toggleTheme('light');">Light</button> --}}
+
+<label class="switch">
+   <i class="icon-sun"></i>
+   <div id="toggler">
+      <input id="themeCheckbox" type="checkbox" onclick="switchTheme()"/>
+      <span class="slider round"></span>
+   </div>
+   <i class="icon-moon"></i>
+</label>
 
 <script>
+   const switchTheme = () => {
+      if(localStorage.getItem('theme')=='dark'){
+         toggleTheme('light');
+      }else{
+         toggleTheme('dark');
+      }
+   }
    
    // Capture the current theme from local storage and adjust the page to use the current theme.
    const htmlEl = document.getElementsByTagName('html')[0];
@@ -9,6 +25,11 @@
 
    if (currentTheme) {
       htmlEl.dataset.theme = currentTheme;
+      if(currentTheme === 'dark'){
+         document.getElementById('themeCheckbox').checked = true;
+      }else{
+         document.getElementById('themeCheckbox').checked = false;
+      }
    }
 
    // When the user changes the theme, we need to save the new value on local storage
