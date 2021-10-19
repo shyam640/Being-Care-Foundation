@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <title>{{title}}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description"
+      content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
+   <meta name="keywords"
+      content="ngogwalior,NGO Gwalior,NGO,Gwalior,ngo gwalior,being care foundation,care foundation" />
+   <meta name="author" content="@its_shyam640" />
+
+   {{!-- Adding meta tags for content fetching from url --}}
+   <meta property="og:title" content="Being Care Foundation" />
+   <meta property="og:image" content="../../public/images/logo_icon.png" />
+   <meta property="og:url" content="https://beingcarefoundation.org" />
+   <meta property="og:site_name" content="Being Care Foundation" />
+   <meta property="og:description"
+      content="We are gwalior goverment funded non-profitable organisation and we work for the welfare of the society by providing education to the children and we contribute to other social services like cleaning environment, planting trees, providing first-aid to animals and humans and many more social activities." />
+
+   {{!-- Adding small icon to the tab --}}
+   <link rel="shortcut icon" href="./images/logo_tab.png" />
+   {{!-- animation css --}}
+   <link rel="stylesheet" href="../../../libs/extra_libs/css/animate.css" />
+   {{!-- Icomoon Icon Fonts --}}
+   <link rel="stylesheet" href="../../../libs/extra_libs/css/icomoon.css" />
+   {{!-- Bootstrap --}}
+   <link rel="stylesheet" href="../../../libs/extra_libs/css/bootstrap.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+   {{!-- Superfish --}}
+   <link rel="stylesheet" href="../../../libs/extra_libs/css/superfish.css" />
+   {{!-- Main css --}}
+   <link rel="stylesheet" href="../../../css/style.css" />
+   <link rel="stylesheet" href="../../../css/gallery.scss" />
+
+   {{!-- Adding link to bootstrap --}}
+
+   {{!--
+   <link rel="stylesheet" href="./libs/bootstrap/css/" /> --}}
+
+   {{!--
+   <link rel="stylesheet" href="./libs/bootstrap/scss/" /> --}}
+
+   {{!-- Modernizr Library --}}
+   <script src="../../../libs/extra_libs/js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<style>
+   :root {
+      @media (prefers-color-scheme: dark) {
+         div.picture {
+            filter: invert(0);
+         }
+      }
+</style>
+
+<body onload="Init()">
+   <div id="shy640-wrapper">
+      <div id="shy640-page">
+         {{!-- top small header --}}
+         <div class="header-top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 col-sm-6 text-left shy640-link">
+                     <a href="/faq">FAQ</a>
+                     <a href="#" onclick="commonMessage()">Forum</a>
+                     <a href="/contact">Contact</a>
+                  </div>
+                  <div class="col-md-6 col-sm-6 text-right shy640-social">
+                     <a href="#" class="grow"><i class="icon-facebook2"></i></a>
+                     <a href="#" class="grow"><i class="icon-twitter2"></i></a>
+                     <a href="#" class="grow"><i class="icon-instagram2"></i></a>
+                     <a href="#" class="grow"><i class="icon-linkedin2"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {{!-- start:header --}}
+         <header id="shy640-header-section" class="sticky-banner" style="border-bottom: 1px solid rgb(201, 199, 199);">
+            <div class="container">
+               <div class="nav-header">
+                  <a href="#" class="js-shy640-nav-toggle shy640-nav-toggle dark"><i></i></a>
+                  <a href="/"><img src="../../../images/logo_icon.png" alt="Being Care Foundation Logo!"
+                        style="filter: drop-shadow(6px 6px 4px rgb(63, 63, 63))" /></a>
+                  <nav id="shy640-menu-wrap" role="navigation">
+                     <ul class="sf-menu" id="shy640-primary-menu">
+                        <li id="home">
+                           <a href="/">Home</a>
+                        </li>
+                        <li id="">
+                           <a href="#" class="shy640-sub-ddown">Projects</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="#"><a href="#">Animal Care</a></li>
+                              <li id=""><a href="#">Free FirstAid Program</a></li>
+                              <li id=""><a href="#">Water Care</a></li>
+                           </ul>
+                        </li>
+                        <li id="about"><a href="/about">About</a></li>
+                        <li id="blog"><a href="/blog">Blog</a></li>
+                        <li id="contact"><a href="/contact">Contact</a></li>
+                        {{#if isAuthenticated}}
+                        <li id="user-button" class="my-3">
+                           <a href="#" class="shy640-sub-ddown">{{username}}</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
+                              <li id="dashboard"><a href="/logout">Logout<i class="icon-signout"></i></a></li>
+                           </ul>
+                        </li>
+                        {{else}}
+                        <li id="join-button" class="my-3">
+                           <a href="#" class="shy640-sub-ddown">Join</a>
+                           <ul class="shy640-sub-menu">
+                              <li id="register-button"><a href="/register">Register</a></li>
+                              <li id="login-button"><a href="/login">Login</a></li>
+                           </ul>
+                        </li>
+                        {{/if}}
+                        <li class="ignore-invert">{{>darkmode}}</li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </header>
+
+         <div class="gallery ignore-invert">
+            <h2 class="title ignore-invert">Latest Images</h2>
+            <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/1.jpg" alt="" />
+               </div>
+            </a>
+
+            <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/2.jpg" alt="" />
+               </div>
+            </a>
+
+            <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/3.jpg" alt="" />
+               </div>
+            </a>
+
+            <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/4.jpg" alt="" />
+               </div>
+            </a>
+
+            <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/5.png" alt="" />
+               </div>
+            </a>
+
+            {{!-- Add below card to add image --}}
+            {{!-- <a href="#" class="card">
+               <div class="content">
+                  <span class="title">Sample-Title</span>
+                  <span class="category">Sample-Category</span>
+               </div>
+               <div class="image">
+                  <img src="../../../gallery/5.png" alt="Image" />
+               </div>
+            </a> --}}
+
+         </div>
+      </div>
+
+
+
+
+      {{>footer}}
+   </div>
+   </div>
+
+   {{!-- jQuery --}}
+   <script src="../../../libs/extra_libs/js/jquery.min.js"></script>
+   {{!-- jQuery Easing --}}
+   <script src="../../../libs/extra_libs/js/jquery.easing.1.3.js"></script>
+   {{!-- Bootstrap --}}
+   <script src="../../../libs/extra_libs/js/bootstrap.min.js"></script>
+   {{!-- Waypoints --}}
+   <script src="../../../libs/extra_libs/js/jquery.waypoints.min.js"></script>
+   {{!-- Sticky --}}
+   <script src="../../../libs/extra_libs/js/sticky.js"></script>
+   {{!-- Stellar --}}
+   <script src="../../../libs/extra_libs/js/jquery.stellar.min.js"></script>
+   {{!-- Placeholder --}}
+   <script src="../../../libs/extra_libs/js/placeholders.min.js"></script>
+
+   <script src="../../../libs/extra_libs/js/hoverIntent.js"></script>
+   {{!-- Superfish --}}
+   <script src="../../../libs/extra_libs/js/superfish.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+   <!-- Main JS -->
+   <script src="../../../js/main.js"></script>
+   <script src="../../../js/login.js"></script>
+   <script src="./../../../js/gallery.js"></script>
+</body>
+<script>
+   let commonMessage = () => {
+      alert("This Page will be available soon...");
+   };
+
+</script>
+
+</html>

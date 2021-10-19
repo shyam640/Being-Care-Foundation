@@ -171,15 +171,25 @@ app.get("/dashboard", async (req, res) => {
   });
   let isAuthenticated = list.isAuthenticated;
   let username = list.username;
+  const donations = [];
 
-  instance.payments
+  await instance.payments
     .all()
     .then((response) => {
-      console.log(response.items);
+      const payments = response.items;
+      const userphone = '+91'+user.phone;
+      payments.forEach((payment) => {
+        if(payment.email === user.email || payment.contact === userphone){
+          donations.push(payment);
+        }
+      });
+      // console.log(donations);
+      // console.log(response.items);
     })
     .catch((error) => {
       console.log(error);
     });
+    // console.log(donations)
   if (isAuthenticated) {
     res.render("dashboard", {
       title: "Being Care Foundation | Dashboard",
@@ -190,12 +200,25 @@ app.get("/dashboard", async (req, res) => {
       phone: user.phone,
       password: user.password,
       tokensize: user.tokens.length,
+      donations,
     });
   } else {
     res.render("login", {
       title: "Being Care Foundation | Login",
     });
   }
+});
+
+app.get("/gallery/images/all",(req,res) => {
+  var list = parseCookies(req);
+  let isAuthenticated = list.isAuthenticated;
+  let username = list.username;
+  res.render("gallery", {
+    title: "Being Care Foundation | Gallery",
+    name: "being-care-foundation",
+    username,
+    isAuthenticated,
+  });
 });
 
 app.get("/logout", async (req, res) => {
@@ -252,6 +275,25 @@ app.get("/redirect", (req, res) => {
   res.render("redirect", {
     title: "Redirecting...",
   });
+});
+
+app.get("/blogeditor", (req, res) => {
+  var list = parseCookies(req);
+  // console.log(list);
+  let isAuthenticated = list.isAuthenticated;
+  let username = list.username;
+  if (list.isAuthenticated) {
+    res.render("blogeditor", {
+      title: "Being Care Foundation | Editor",
+      name: "being-care-foundation",
+      username,
+      isAuthenticated,
+    });
+  } else {
+    res.render("login", {
+      title: "Being Care Foundation | login",
+    });
+  }
 });
 
 app.get("/error", (req, res) => {

@@ -11,7 +11,7 @@
       <div class="col-md-6 col-sm-6 text-left shy640-link">
         <a href="/faq">FAQ</a>
         <a href="#" onclick="commonMessage()">Forum</a>
-        <a href="#">Contact</a>
+        <a href="/contact">Contact</a>
       </div>
       <div class="col-md-6 col-sm-6 text-right shy640-social">
         <a href="#" class="grow"><i class="icon-facebook2"></i></a>
@@ -46,7 +46,7 @@
           <li id="blog"><a href="/blog">Blog</a></li>
           <li id="contact"><a href="/contact">Contact</a></li>
           {{#if isAuthenticated}}
-          <li id="user-button" class="btn btn-grey btn-rounded my-3">
+          <li id="user-button" class="my-3">
             <a href="#" class="shy640-sub-ddown">{{username}}</a>
             <ul class="shy640-sub-menu">
               <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
@@ -54,7 +54,7 @@
             </ul>
           </li>
           {{else}}
-          <li id="join-button" class="btn btn-default btn-rounded my-3">
+          <li id="join-button" class="my-3">
             <a href="#" class="shy640-sub-ddown">Join</a>
             <ul class="shy640-sub-menu">
               <li id="register-button"><a href="/register">Register</a></li>
@@ -62,7 +62,7 @@
             </ul>
           </li>
           {{/if}}
-          <li>
+          <li class="ignore-invert">
             {{>darkmode}}
           </li>
         </ul>
@@ -83,7 +83,8 @@
     <div class="desc animate-box" style="z-index: 10;">
       {{>message}}
       <span>We Care and make Aware</span>
-      <span><a class="btn btn-primary btn-lg ignore-invert" href="https://rzp.io/l/MrSqoAd" target="_blank">Donate Now</a></span>
+      <span><a class="btn btn-primary btn-lg ignore-invert" href="https://rzp.io/l/MrSqoAd" target="_blank">Donate
+          Now</a></span>
     </div>
   </div>
 </div>
